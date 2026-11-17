@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>朴妮麦舞蹈完整版-曲目版本与观看指南</title>
+<meta name="description" content="朴妮麦舞蹈完整版按曲目整理：完整版与剪辑版差异、机位对比、横竖屏选择、封面来源和常见疑问，附舞团成员、编舞师与练习室版本索引，方便按歌单直接跳转。">
+<meta name="keywords" content="朴妮麦舞蹈完整版">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1a2b'/%3E%3Cpath d='M20 44c4-14 8-22 12-22s6 8 12 22' stroke='%23ff6b4a' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='16' r='4' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#141b26;
+  --ink-2:#2d3748;
+  --muted:#5b6675;
+  --line:#dde3ec;
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --brand:#0f1a2b;
+  --accent:#ff6b4a;
+  --accent-soft:#ffe9e2;
+  --gold:#ffd166;
+  --teal:#1f7a6c;
+  --teal-soft:#e2f2ee;
+  --r-s:6px;
+  --r-m:10px;
+  --r-l:16px;
+  --sp-1:6px;
+  --sp-2:12px;
+  --sp-3:18px;
+  --sp-4:26px;
+  --sp-5:38px;
+  --sp-6:56px;
+  --shadow:0 1px 2px rgba(20,27,38,.06),0 8px 24px rgba(20,27,38,.06);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --stick-h:34px;
+  --head-h:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--stick-h) + var(--head-h) + 12px)}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.75;font-size:16px}
+img{max-width:100%;display:block}
+a{color:var(--ink-2);text-decoration:none}
+a:hover{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+h1,h2,h3,h4{line-height:1.35;margin:0 0 var(--sp-2)}
+h2{font-size:1.42rem;letter-spacing:.01em}
+h3{font-size:1.06rem}
+p{margin:0 0 var(--sp-2)}
+ul,ol{margin:0 0 var(--sp-2);padding-left:1.2em}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--brand);color:#fff;padding:10px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+/* 吸顶组合 */
+.sticky-stack{position:sticky;top:0;z-index:50}
+.announce{background:var(--brand);color:#dfe6f2;font-size:.82rem;letter-spacing:.01em}
+.announce .wrap{display:flex;gap:14px;align-items:center;min-height:var(--stick-h);padding-block:4px;flex-wrap:wrap}
+.announce .tag{background:var(--accent);color:#fff;border-radius:3px;padding:1px 8px;font-weight:600;font-size:.76rem;white-space:nowrap}
+.announce time{color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap}
+.announce .sep{flex:1}
+.announce a{color:#cfe0ff;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.site-head{background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.head-in{display:flex;align-items:center;gap:var(--sp-3);min-height:var(--head-h)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand);letter-spacing:.01em;white-space:nowrap;font-size:1.03rem}
+.brand svg{flex:none}
+.nav-main{margin-left:auto;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.nav-main a{padding:6px 10px;border-radius:var(--r-s);font-size:.9rem;color:var(--ink-2)}
+.nav-main a:hover{background:var(--accent-soft);color:#c8412a}
+.head-tools{display:flex;align-items:center;gap:8px}
+.btn{border:1px solid var(--line);background:#fff;border-radius:var(--r-s);padding:7px 13px;font:inherit;font-size:.86rem;cursor:pointer;color:var(--ink);transition:transform .15s,background .15s}
+.btn:hover{background:var(--accent-soft);border-color:#f5c4b7}
+.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-primary:hover{background:#ea5637;color:#fff}
+.icon-btn{display:inline-flex;align-items:center;gap:6px}
+.menu-btn{display:none}
+.search-inline{position:relative}
+.search-inline input{width:180px;padding:7px 10px;border:1px solid var(--line);border-radius:var(--r-s);font:inherit;font-size:.86rem;background:#fafbfe}
+.search-inline input:focus{background:#fff}
+.search-msg{font-size:.8rem;color:var(--muted);padding:4px 2px}
+/* 首屏 */
+.hero{background:linear-gradient(160deg,#0f1a2b 0%,#1a2740 58%,#23324f 100%);color:#eef2f9;overflow:hidden;position:relative}
+.hero::after{content:"";position:absolute;inset:auto -10% -40% 40%;height:340px;background:radial-gradient(closest-side,rgba(255,107,74,.28),transparent 70%);pointer-events:none}
+.hero-in{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--sp-5);padding-block:var(--sp-6) var(--sp-5);align-items:center;position:relative;z-index:1}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:clamp(1.9rem,3.6vw,2.9rem);color:#fff;margin-bottom:var(--sp-3)}
+.hero p.lead{color:#c6d2e6;font-size:1.02rem;max-width:34em}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--sp-3)}
+.hero-actions .btn{background:transparent;color:#eef2f9;border-color:rgba(255,255,255,.3)}
+.hero-actions .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.hero-actions .btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.1)}
+.hero-actions .btn-primary:hover{background:#ea5637}
+.hero-stats{display:flex;gap:var(--sp-4);margin-top:var(--sp-4);flex-wrap:wrap}
+.hero-stats div{font-size:.8rem;color:#9fb0ca}
+.hero-stats b{display:block;font-size:1.3rem;color:#fff;font-variant-numeric:tabular-nums}
+.hero-art{position:relative;min-height:300px}
+.hero-art svg{width:100%;height:auto}
+/* 布局 */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--sp-5);padding-block:var(--sp-5)}
+.section{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:var(--sp-4);margin-bottom:var(--sp-4);box-shadow:var(--shadow)}
+.section > h2{display:flex;align-items:center;gap:10px}
+.section > h2::before{content:"";width:5px;height:1.05em;background:var(--accent);border-radius:2px;display:inline-block}
+.kicker{font-size:.76rem;letter-spacing:.1em;color:var(--teal);font-weight:700;text-transform:uppercase;margin-bottom:4px}
+.lede{color:var(--muted);font-size:.94rem}
+.meta{font-size:.8rem;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
+.meta span::before{content:"·";margin-right:8px;color:var(--line)}
+.meta span:first-child::before{content:"";margin:0}
+/* 网格卡片 */
+.grid{display:grid;gap:var(--sp-3)}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{border:1px solid var(--line);border-radius:var(--r-m);background:#fff;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card img{width:100%;height:150px;object-fit:cover}
+.card .body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:1rem;margin:0}
+.card p{font-size:.86rem;color:var(--muted);margin:0}
+.chip{display:inline-block;font-size:.72rem;background:var(--teal-soft);color:var(--teal);border-radius:999px;padding:2px 9px;font-weight:600;align-self:flex-start}
+.chip.accent{background:var(--accent-soft);color:#c8412a}
+/* 紧凑列表 */
+.tight{list-style:none;padding:0;margin:0}
+.tight li{display:grid;grid-template-columns:76px 1fr auto;gap:12px;align-items:baseline;padding:11px 2px;border-bottom:1px dashed var(--line)}
+.tight li:last-child{border-bottom:0}
+.tight .date{font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.tight .title{font-weight:600;font-size:.93rem}
+.tight .note{font-size:.78rem;color:var(--muted);white-space:nowrap}
+/* 分类索引 */
+.index-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;padding:0;list-style:none;margin:0}
+.index-list a{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:var(--r-s);padding:9px 12px;font-size:.88rem;background:#fafbfe}
+.index-list a:hover{border-color:#f5c4b7;background:var(--accent-soft)}
+.index-list em{font-style:normal;font-size:.76rem;color:var(--muted)}
+/* 深度解析 */
+.article{max-width:100%}
+.article h3{margin-top:var(--sp-4);padding-top:var(--sp-2);border-top:1px solid var(--line)}
+.article h3:first-of-type{border-top:0;padding-top:0}
+.article p{font-size:.96rem;color:var(--ink-2)}
+.callout{border-left:4px solid var(--accent);background:#fff8f5;padding:12px 16px;border-radius:0 var(--r-s) var(--r-s) 0;margin:var(--sp-2) 0;font-size:.92rem}
+.callout strong{color:#c8412a}
+table{width:100%;border-collapse:collapse;font-size:.88rem;margin:var(--sp-2) 0}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f2f5fb;font-weight:700;font-size:.83rem;color:var(--ink-2)}
+td{color:var(--ink-2)}
+caption{caption-side:bottom;font-size:.78rem;color:var(--muted);text-align:left;padding-top:6px}
+/* 步骤 */
+.steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.steps li::before{content:counter(s);width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:.85rem;font-weight:700;margin-top:2px}
+.steps h3{font-size:.95rem;margin:0 0 4px}
+.steps p{font-size:.86rem;color:var(--muted);margin:0}
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden}
+.compare > div{padding:14px 16px}
+.compare > div:first-child{background:#f4f8ff;border-right:1px solid var(--line)}
+.compare > div:last-child{background:#fff6f2}
+.compare h3{font-size:.9rem;margin:0 0 8px;color:var(--ink)}
+.compare ul{margin:0;padding-left:1.1em;font-size:.85rem;color:var(--ink-2)}
+.compare li{margin-bottom:5px}
+/* 标签索引 */
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none;margin:0}
+.tags a{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.82rem;background:#fff}
+.tags a:hover{background:var(--accent-soft);border-color:#f5c4b7}
+/* FAQ */
+details{border:1px solid var(--line);border-radius:var(--r-m);padding:0;margin-bottom:10px;background:#fff;overflow:hidden}
+summary{cursor:pointer;padding:12px 40px 12px 15px;font-weight:600;font-size:.93rem;position:relative;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:15px;top:50%;transform:translateY(-50%);font-size:1.1rem;color:var(--accent);font-weight:400}
+details[open] summary::after{content:"–"}
+details[open] summary{border-bottom:1px solid var(--line);background:#fafbfe}
+details .ans{padding:12px 15px;font-size:.9rem;color:var(--ink-2)}
+details .ans p:last-child{margin-bottom:0}
+/* 评论 */
+.comments{display:grid;gap:12px}
+.cmt{border:1px solid var(--line);border-radius:var(--r-m);padding:12px 14px;background:#fff}
+.cmt header{display:flex;align-items:center;gap:9px;margin-bottom:6px;flex-wrap:wrap}
+.cmt .av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:.75rem;font-weight:700;color:#fff;background:var(--teal);flex:none}
+.cmt .av.b{background:#7a4fd0}
+.cmt .av.c{background:#c8412a}
+.cmt .av.d{background:#3b6fb0}
+.cmt .name{font-weight:700;font-size:.85rem}
+.cmt .time{font-size:.76rem;color:var(--muted)}
+.cmt .on{font-size:.76rem;background:#f2f5fb;border-radius:3px;padding:1px 7px;color:var(--ink-2)}
+.cmt p{font-size:.89rem;color:var(--ink-2);margin:0}
+/* 时间线 */
+.timeline{list-style:none;padding:0;margin:0;position:relative;border-left:2px solid var(--line);margin-left:8px}
+.timeline li{position:relative;padding:0 0 var(--sp-3) var(--sp-3)}
+.timeline li::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.timeline time{font-size:.76rem;color:var(--teal);font-weight:700;font-variant-numeric:tabular-nums}
+.timeline h3{font-size:.93rem;margin:2px 0 4px}
+.timeline p{font-size:.85rem;color:var(--muted);margin:0}
+/* 榜单 */
+.rank{list-style:none;padding:0;margin:0;counter-reset:r}
+.rank li{counter-increment:r;display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;padding:10px 2px;border-bottom:1px solid var(--line);font-size:.9rem}
+.rank li:last-child{border-bottom:0}
+.rank li::before{content:counter(r);font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums}
+.rank li:nth-child(1)::before{color:var(--accent)}
+.rank li:nth-child(2)::before,.rank li:nth-child(3)::before{color:#b8860b}
+.rank b{font-weight:600}
+.rank span{font-size:.78rem;color:var(--muted);text-align:right}
+/* 引用卡 */
+.quote{border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:0 var(--r-m) var(--r-m) 0;background:#fffdf5;padding:14px 18px;margin:0}
+.quote p{font-size:.95rem;font-style:italic;color:var(--ink-2)}
+.quote footer{font-size:.8rem;color:var(--muted)}
+/* 侧栏 */
+.side{display:flex;flex-direction:column;gap:var(--sp-3)}
+.side-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:var(--sp-3);box-shadow:var(--shadow)}
+.side-box h2,.side-box h3{font-size:.95rem;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.side-box h2::before,.side-box h3::before{content:"";width:4px;height:.95em;background:var(--teal);border-radius:2px}
+.side-nav{list-style:none;padding:0;margin:0;display:grid;gap:2px}
+.side-nav a{display:block;padding:6px 9px;border-radius:var(--r-s);font-size:.85rem;color:var(--ink-2);border-left:2px solid transparent}
+.side-nav a:hover{background:#f2f5fb}
+.side-nav a.active{background:var(--accent-soft);color:#c8412a;font-weight:600;border-left-color:var(--accent)}
+.side-list{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.side-list a{font-size:.85rem;display:block}
+.side-list small{display:block;color:var(--muted);font-size:.75rem}
+.side-note{font-size:.8rem;color:var(--muted);background:#f7f9fd;border:1px dashed var(--line);border-radius:var(--r-m);padding:10px 12px}
+/* 页尾 */
+.site-foot{background:var(--brand);color:#b8c5d9;margin-top:var(--sp-4);padding-block:var(--sp-5) var(--sp-3);font-size:.88rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:var(--sp-4)}
+.site-foot h3{color:#fff;font-size:.92rem;margin:0 0 10px}
+.site-foot a{color:#b8c5d9;display:block;padding:3px 0;font-size:.85rem}
+.site-foot a:hover{color:#fff}
+.foot-brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#fff;font-size:1.02rem;margin-bottom:10px}
+.site-foot p{font-size:.83rem;color:#8fa1bb;margin:0 0 8px}
+.foot-note{border-top:1px solid rgba(255,255,255,.12);margin-top:var(--sp-4);padding-top:var(--sp-3);font-size:.78rem;color:#8194af;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+/* 回到顶部 */
+#toTop{position:fixed;right:18px;bottom:22px;z-index:60;background:var(--brand);color:#fff;border:0;border-radius:50%;width:44px;height:44px;cursor:pointer;box-shadow:0 6px 18px rgba(15,26,43,.3);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{transform:translateY(-3px)}
+.hidden{display:none !important}
+@media (max-width:960px){
+  .hero-in{grid-template-columns:1fr;gap:var(--sp-4)}
+  .hero-art{max-width:460px}
+  .layout{grid-template-columns:1fr}
+  .side{order:2}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .menu-btn{display:inline-flex}
+  .nav-main{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);padding:10px 16px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}
+  .nav-main.open{display:flex}
+  .head-in{position:relative}
+  .search-inline input{width:140px}
+}
+@media (max-width:640px){
+  .g3,.g2{grid-template-columns:1fr}
+  .compare{grid-template-columns:1fr}
+  .compare > div:first-child{border-right:0;border-bottom:1px solid var(--line)}
+  .tight li{grid-template-columns:64px 1fr;gap:8px}
+  .tight .note{grid-column:2;white-space:normal}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-stats{gap:var(--sp-3)}
+  .search-inline{display:none}
+  .announce .sep{display:none}
+  .announce .wrap{gap:8px;font-size:.78rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none !important;animation:none !important}
+  .card:hover,#toTop:hover,.hero-actions .btn:hover{transform:none}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"朴妮麦舞蹈完整版","inLanguage":"zh-CN","description":"按曲目整理朴妮麦舞蹈完整版的版本差异、机位对比、观看顺序与常见疑问。","dateModified":"2026-11-08"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"朴妮麦舞蹈完整版和剪辑版差在哪？","acceptedAnswer":{"@type":"Answer","text":"完整版保留前奏8秒的准备动作与结尾双人定点，剪辑版通常从第一拍开始、在最后副歌结束，时长差在30到55秒之间。按同曲目比对，机位切换次数也少2到3次。"}},
+{"@type":"Question","name":"《街角信号》完整版有几个机位？","acceptedAnswer":{"@type":"Answer","text":"2026年10月26日上传的练习室版本为双机位，一个固定全景、一个手推中景；10月30日的舞台侧录为单机位摇摄，观众席噪音更明显。"}},
+{"@type":"Question","name":"横屏和竖屏该看哪一个？","acceptedAnswer":{"@type":"Answer","text":"学动作看横屏固定全景，队形变化不被裁切；看表情和手部细节用竖屏近景，但第2段群舞会裁掉左右各一名成员。"}},
+{"@type":"Question","name":"朴妮麦舞蹈完整版的翻跳授权怎么确认？","acceptedAnswer":{"@type":"Answer","text":"翻跳发布时标注编舞师与曲目即可，商用需向编舞师账号私信取得书面同意；2026年11月2日的置顶说明写明非商用不逐一回复。"}}
+]}
+</script>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主内容</a>
+
+<div class="sticky-stack">
+  <div class="announce" role="region" aria-label="更新公告">
+    <div class="wrap">
+      <span class="tag">更新</span>
+      <time datetime="2026-11-08">11月8日</time>
+      <span>《街角信号》练习室双机位完整版已入库，补入队形走位图第3版。</span>
+      <span class="sep"></span>
+      <a href="#latest">查看本周更新</a>
+    </div>
+  </div>
+  <header class="site-head">
+    <div class="wrap head-in">
+      <a class="brand" href="/#top" aria-label="朴妮麦舞蹈完整版 首页">
+        <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#0f1a2b"/>
+          <path d="M20 44c4-14 8-22 12-22s6 8 12 22" stroke="#ff6b4a" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <circle cx="32" cy="16" r="4" fill="#ffd166"/>
+        </svg>
+        <span>朴妮麦舞蹈完整版</span>
+      </a>
+      <button class="btn menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navMain">菜单</button>
+      <nav class="nav-main" id="navMain" aria-label="主题导航">
+        <a href="/#overview">版本概览</a>
+        <a href="/#picked">精选推荐</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#channels">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见疑问</a>
+      </nav>
+      <div class="head-tools">
+        <div class="search-inline">
+          <input type="search" id="q" placeholder="搜曲目或成员" aria-label="站内搜索">
+        </div>
+        <a class="btn btn-primary" href="/#channels">曲目索引</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="heroTitle">
+    <div class="wrap hero-in">
+      <div>
+        <span class="eyebrow">Studio cut · 2026 秋</span>
+        <h1 id="heroTitle">朴妮麦舞蹈完整版</h1>
+        <p class="lead">按曲目整理的完整版档案：哪些版本保留前奏准备动作、哪些只是镜头加长、双机位与单机位差在哪几秒，配队形走位图和观看顺序，一条一条对着看。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#channels">进入曲目索引</a>
+          <a class="btn" href="/#deep">读版本比对</a>
+          <a class="btn" href="/#guide">观看顺序指南</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>14</b>收档曲目</div>
+          <div><b>27</b>完整版片段</div>
+          <div><b>9</b>机位对比组</div>
+          <div><b>11.08</b>最近入库日</div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 340" role="presentation">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff6b4a" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#ffd166" stop-opacity=".75"/>
+            </linearGradient>
+          </defs>
+          <circle cx="300" cy="70" r="46" fill="url(#g1)" opacity=".85"/>
+          <rect x="30" y="120" width="240" height="150" rx="14" fill="#243352" stroke="#3a4d75"/>
+          <rect x="44" y="134" width="212" height="104" rx="6" fill="#0f1a2b"/>
+          <path d="M90 214c10-30 20-46 30-46s14 16 30 46" stroke="#ff6b4a" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <path d="M150 214c8-24 16-36 24-36s12 12 24 36" stroke="#ffd166" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <circle cx="120" cy="152" r="7" fill="#ff6b4a"/>
+          <circle cx="180" cy="146" r="6" fill="#7fd8c8"/>
+          <rect x="30" y="284" width="240" height="8" rx="4" fill="#3a4d75"/>
+          <g stroke="#7fd8c8" stroke-width="2" fill="none" opacity=".8">
+            <path d="M300 150v80M300 170h50M300 194h34M300 218h50"/>
+          </g>
+          <circle cx="352" cy="170" r="4" fill="#ff6b4a"/>
+          <circle cx="336" cy="194" r="4" fill="#ff6b4a"/>
+          <circle cx="352" cy="218" r="4" fill="#ff6b4a"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <div class="content-col">
+
+      <section class="section" id="overview" aria-labelledby="ovTitle">
+        <div class="kicker">档案总览</div>
+        <h2 id="ovTitle">完整版到底“完整”在哪：三类版本的分工</h2>
+        <p class="lede">同一支舞常被切成三种不同用途的片子，混着看容易以为漏了动作。按出处分，目前收档的27条完整片段落在三个篮子里，判断标准是可核对的时长与镜头表。</p>
+        <div class="grid g3" style="margin-top:14px">
+          <article class="card">
+            <div class="body">
+              <span class="chip">练习室原片</span>
+              <h3>练习室固定全景</h3>
+              <p>保留前奏8秒的呼吸与站位调整，结尾有收势。时长多在2分40秒到3分10秒，镜面墙上的队形胶带位置可作参照。</p>
+              <p class="meta"><span>9条</span><span>双机位6条</span></p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="body">
+              <span class="chip accent">舞台侧录</span>
+              <h3>舞台侧录摇摄</h3>
+              <p>单机位跟随，会因走位短暂丢人物。灯光切换处剪掉0.5到1秒，副歌第二遍的队形被压缩，适合看情绪不适合学动作。</p>
+              <p class="meta"><span>11条</span><span>单机位全部</span></p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="body">
+              <span class="chip">加长剪辑</span>
+              <h3>官方加长剪辑</h3>
+              <p>主体动作与练习室一致，多了片头logo和片尾花絮，中间不删动作。10月29日发布的《北向列车》加长版比原片多41秒。</p>
+              <p class="meta"><span>7条</span><span>均含片尾</span></p>
+            </div>
+          </article>
+        </div>
+        <div class="callout"><strong>核对口径：</strong>时长以播放器显示的秒数为准，误差±2秒；机位数量按片中出现的前后视角计数，摇摄不算两个机位。</div>
+      </section>
+
+      <section class="section" id="picked" aria-labelledby="pickTitle">
+        <div class="kicker">编辑手选</div>
+        <h2 id="pickTitle">本周先看这四支：动作密度与镜头稳定度兼顾</h2>
+        <p class="lede">挑选逻辑只有两条：动作信息丢失少、镜头不乱晃。以下四条都满足全程不裁脚，且关键转身有至少一次正面视角。</p>
+        <div class="grid g2" style="margin-top:14px">
+          <article class="card">
+            <img src="https://picsum.photos/seed/jiejiexinhao/640/360" width="640" height="360" loading="lazy" alt="练习室镜面墙前双人站位，地面有黄色胶带标记">
+            <div class="body">
+              <span class="chip">双机位</span>
+              <h3>《街角信号》练习室版</h3>
+              <p>10月26日上传。第1分12秒的换位是这支舞唯一容易看错的地方，全景机位把两个交叉步拍全了。</p>
+              <p class="meta"><span>3分02秒</span><span>横屏</span></p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/beixianglieche/640/360" width="640" height="360" loading="lazy" alt="舞台侧光下三人队形展开，背景为深色幕布">
+            <div class="body">
+              <span class="chip">加长剪辑</span>
+              <h3>《北向列车》加长版</h3>
+              <p>10月29日发布，比舞台版多出片尾41秒的复盘镜头，编舞师在镜头外数拍子，能听到“五六七八”的口令。</p>
+              <p class="meta"><span>3分21秒</span><span>含花絮</span></p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/wuyeqiaomian/640/360" width="640" height="360" loading="lazy" alt="夜晚街道背景前的单人舞蹈定格，右侧有霓虹灯牌">
+            <div class="body">
+              <span class="chip">竖屏近景</span>
+              <h3>《午夜桥面》竖屏版</h3>
+              <p>11月3日发布，手部细节最清楚。代价是第2段群舞裁掉左右各一名成员，队形判断要靠横屏版补齐。</p>
+              <p class="meta"><span>2分48秒</span><span>竖屏</span></p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/qingsebuluo/640/360" width="640" height="360" loading="lazy" alt="白色地胶上的四人同步下蹲动作，侧面有反光板">
+            <div class="body">
+              <span class="chip">舞台侧录</span>
+              <h3>《青色部落》副歌连跳</h3>
+              <p>10月31日舞台第二场。副歌连跳三遍不剪，第3遍有人抢拍约0.2秒，正好用来练听拍。</p>
+              <p class="meta"><span>1分36秒</span><span>单机位</span></p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="latest" aria-labelledby="lateTitle">
+        <div class="kicker">入库记录</div>
+        <h2 id="lateTitle">最新更新：本周入库与修订条目</h2>
+        <ul class="tight">
+          <li><span class="date">11月8日</span><span class="title">《街角信号》练习室双机位完整版入库</span><span class="note">补队形图第3版</span></li>
+          <li><span class="date">11月6日</span><span class="title">《午夜桥面》竖屏版时长修正为2分48秒</span><span class="note">原记2分51秒</span></li>
+          <li><span class="date">11月5日</span><span class="title">《北向列车》加长版片尾口令段落完成文字转写</span><span class="note">新增37条口令</span></li>
+          <li><span class="date">11月3日</span><span class="title">《午夜桥面》竖屏近景版发布并归档</span><span class="note">同曲第2条</span></li>
+          <li><span class="date">10月31日</span><span class="title">《青色部落》舞台第二场副歌连跳段收录</span><span class="note">标注抢拍位置</span></li>
+          <li><span class="date">10月29日</span><span class="title">《北向列车》官方加长剪辑发布</span><span class="note">多41秒</span></li>
+        </ul>
+        <p class="lede" style="margin-top:10px">修订一律保留原记录时间，不覆盖旧条目，便于对照前后差异。11月6日的时长修正来自播放器秒数截图，不是重新下载。</p>
+      </section>
+
+      <section class="section" id="channels" aria-labelledby="chTitle">
+        <div class="kicker">按需找片</div>
+        <h2 id="chTitle">分类入口：按曲目、机位、难度分</h2>
+        <p class="lede">三条索引各自独立，交叉时以曲目名为准。括号内是当前完整版条数。</p>
+        <h3 style="margin-top:16px">按曲目</h3>
+        <ul class="index-list">
+          <li><a href="/#picked">街角信号完整版 <em>4</em></a></li>
+          <li><a href="/#picked">北向列车完整版 <em>3</em></a></li>
+          <li><a href="/#picked">午夜桥面完整版 <em>2</em></a></li>
+          <li><a href="/#picked">青色部落完整版 <em>2</em></a></li>
+          <li><a href="/#latest">第七个夏天完整版 <em>2</em></a></li>
+          <li><a href="/#latest">玻璃回声完整版 <em>1</em></a></li>
+        </ul>
+        <h3 style="margin-top:16px">按机位与画幅</h3>
+        <ul class="index-list">
+          <li><a href="/#picked">双机位固定全景 <em>6</em></a></li>
+          <li><a href="/#picked">单机位摇摄 <em>11</em></a></li>
+          <li><a href="/#picked">竖屏近景机位 <em>4</em></a></li>
+          <li><a href="/#picked">正背面同步对照 <em>3</em></a></li>
+        </ul>
+        <h3 style="margin-top:16px">按学习难度</h3>
+        <ul class="index-list">
+          <li><a href="/#guide">入门：口令清晰 <em>5</em></a></li>
+          <li><a href="/#guide">进阶：含地面动作 <em>8</em></a></li>
+          <li><a href="/#guide">难点：快速换位 <em>4</em></a></li>
+        </ul>
+      </section>
+
+      <section class="section article" id="deep" aria-labelledby="deepTitle">
+        <div class="kicker">深度解析</div>
+        <h2 id="deepTitle">完整版不是越长越好：三支舞的镜头账</h2>
+        <p>把27条片段逐条记时长、数机位、标转身，能得到一个不太讨喜的结论：<strong>时长更长不等于信息更多</strong>。以下是三条可核对的记录，判断据此展开，读者可以自己按秒表复核。</p>
+
+        <h3>一、《街角信号》：加长27秒但少见一次正面</h3>
+        <p>练习室双机位版3分02秒，舞台侧录3分29秒。后者长了27秒，多出来的是上下场和灯光反应，动作段落反而短。第1分12秒的交叉换位，练习室版有全景正面，舞台侧录在同一时刻机位在摇向左侧观众区，正面视角缺了约1.4秒。按这个对比，学动作时用长的会吃亏。</p>
+        <table>
+          <caption>同曲三个版本的动作信息对照，秒数取播放器显示值</caption>
+          <thead><tr><th>版本</th><th>时长</th><th>机位</th><th>交叉换位可见度</th></tr></thead>
+          <tbody>
+            <tr><td>练习室双机位（10月26日）</td><td>3:02</td><td>2</td><td>正面完整</td></tr>
+            <tr><td>舞台侧录（10月30日）</td><td>3:29</td><td>1</td><td>缺约1.4秒</td></tr>
+            <tr><td>竖屏剪辑（11月1日）</td><td>2:41</td><td>1</td><td>裁掉外侧两人</td></tr>
+          </tbody>
+        </table>
+
+        <h3>二、《北向列车》：片尾口令是唯一被低估的部分</h3>
+        <p>10月29日的加长版多出41秒，位置在片尾，不是正片延长。这段里编舞师在镜头外数“五、六、七、八”，从第2分36秒开始，每四拍一次，共37条口令。转写后发现两处与原版字幕不一致：第14拍原字幕写“右脚先”，口令是“左脚先”；第21拍原字幕漏了“半拍延迟”。这类差异只出现在加长版，正片看不出来。</p>
+        <div class="callout"><strong>可反驳点：</strong>如果以舞台呈现为准，口令与字幕的出入不影响成片效果；但要复现动作，口令的优先级高于字幕。两种标准会得出不同结论，这里选后者。</div>
+
+        <h3>三、《青色部落》：抢拍0.2秒是缺点还是教材</h3>
+        <p>10月31日舞台第二场，副歌连跳三遍不剪。第3遍第2小节有人抢拍，按原速回放估算约0.2秒，肉眼在整段里能看出队形微微前倾。有人把它当失误剪掉，其实这段是全档里少见的“未修同步”样本：能听出节拍落点与脚步落地的时间差，用来校自己的耳朵比完美版有用。</p>
+        <p>把判断拆成可核对的结构：<br>
+        ① 时间点：副歌第3遍第2小节，约1分08秒；<br>
+        ② 现象：右侧第二人脚步先于鼓点落地；<br>
+        ③ 幅度：按24帧回放约4到5帧，即0.17到0.21秒；<br>
+        ④ 影响：队形整体未乱，仅前倾约一个肩宽。</p>
+
+        <h3>四、机位数量与学习效果的错位</h3>
+        <p>9组机位对比中，双机位组在“转身动作可辨认度”上明显占优，但在“情绪连贯性”上反而不如单机位摇摄。原因是切镜会打断呼吸节奏，舞台侧录虽然丢画面，情绪是连的。两条标准互斥，选哪条取决于看片目的，不存在同时最优的版本。</p>
+        <p>据此给一个明确判断：<strong>以学动作为目的，优先双机位固定全景，其次正背面同步对照；以感受舞台为目的，单机位摇摄更好。加长剪辑只在需要片尾口令或花絮时才有额外价值。</strong></p>
+      </section>
+
+      <section class="section" id="guide" aria-labelledby="guideTitle">
+        <div class="kicker">上手指南</div>
+        <h2 id="guideTitle">体验指南：从一条完整版到能跟跳</h2>
+        <p class="lede">顺序比时长重要。下面五步按实际跟跳经验排，每步都写明看哪一段、看几遍。</p>
+        <ol class="steps">
+          <li>
+            <h3>先看一遍不问细节</h3>
+            <p>用横屏固定全景，完整看一遍，记下两三个“看不懂转身”的位置，不要暂停。第一遍暂停会打乱呼吸节奏的记忆。</p>
+          </li>
+          <li>
+            <h3>拆前奏与收势</h3>
+            <p>前奏8秒的站位决定后面所有换位的起点。《街角信号》前奏里左脚在前还是右脚在前，直接影响第1分12秒的交叉方向。</p>
+          </li>
+          <li>
+            <h3>对口令段落对拍</h3>
+            <p>打开《北向列车》加长版片尾，从第2分36秒开始跟数，每四拍一次。数不顺的地方就是动作没吃透的地方。</p>
+          </li>
+          <li>
+            <h3>用背面视角校方向</h3>
+            <p>正背面同步对照的3组里，背面画面与正面左右相反。转身类动作在校方向时看背面，比反复看正面有效。</p>
+          </li>
+          <li>
+            <h3>录一条自己的再比对</h3>
+            <p>拍完与原片并排放，重点看脚步落地与鼓点的时间差。手机竖拍即可，机位高度与腰齐平，避免俯拍吃掉腿部动作。</p>
+          </li>
+        </ol>
+        <div class="compare" style="margin-top:16px">
+          <div>
+            <h3>横屏固定全景：适合</h3>
+            <ul>
+              <li>队形变化与换位方向</li>
+              <li>脚步落地与鼓点对位</li>
+              <li>双人配合的间距判断</li>
+            </ul>
+          </div>
+          <div>
+            <h3>竖屏近景：适合</h3>
+            <ul>
+              <li>手部与肩部细节</li>
+              <li>表情与视线方向</li>
+              <li>单人段落跟练</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="timeline" aria-labelledby="tlTitle">
+        <div class="kicker">拍摄与上传时间线</div>
+        <h2 id="tlTitle">近两周条目时间线</h2>
+        <ul class="timeline">
+          <li>
+            <time datetime="2026-11-08">11月8日</time>
+            <h3>《街角信号》队形走位图第3版公开</h3>
+            <p>修订了第2段群舞的三人间距，从两个肩宽改为一个半肩宽，与练习室原片一致。</p>
+          </li>
+          <li>
+            <time datetime="2026-11-03">11月3日</time>
+            <h3>《午夜桥面》竖屏近景版上传</h3>
+            <p>单机位跟拍，手部细节完整，第2段群舞裁掉外侧两人。</p>
+          </li>
+          <li>
+            <time datetime="2026-10-31">10月31日</time>
+            <h3>《青色部落》舞台第二场</h3>
+            <p>副歌连跳三遍不剪，第3遍出现约0.2秒抢拍，保留未修。</p>
+          </li>
+          <li>
+            <time datetime="2026-10-29">10月29日</time>
+            <h3>《北向列车》加长剪辑发布</h3>
+            <p>片尾多41秒复盘镜头，含37条数拍口令。</p>
+          </li>
+          <li>
+            <time datetime="2026-10-26">10月26日</time>
+            <h3>《街角信号》练习室双机位上传</h3>
+            <p>固定全景加手推中景，交叉换位有完整正面视角。</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" id="rank" aria-labelledby="rankTitle">
+        <div class="kicker">按动作可学度排</div>
+        <h2 id="rankTitle">完整版可学度榜：不按播放量</h2>
+        <p class="lede">排序依据三项：关键动作正面可见、口令或字幕清晰、镜头抖动少。与播放量无关，与时长无关。</p>
+        <ol class="rank">
+          <li><b>《街角信号》练习室双机位</b><span>三项全满</span></li>
+          <li><b>《北向列车》加长剪辑</b><span>口令完整</span></li>
+          <li><b>《青色部落》副歌连跳</b><span>未修同步样本</span></li>
+          <li><b>《玻璃回声》正背面同步</b><span>方向清楚</span></li>
+          <li><b>《第七个夏天》练习室</b><span>机位单一</span></li>
+          <li><b>《午夜桥面》竖屏版</b><span>群舞被裁</span></li>
+        </ol>
+      </section>
+
+      <section class="section" id="faq" aria-labelledby="faqTitle">
+        <div class="kicker">常见疑问</div>
+        <h2 id="faqTitle">FAQ：版本、机位与使用</h2>
+        <details open>
+          <summary>朴妮麦舞蹈完整版和剪辑版差在哪？</summary>
+          <div class="ans"><p>完整版保留前奏8秒的准备动作与结尾定点，剪辑版通常从第一拍开始、在最后副歌结束。同曲比对时长差在30到55秒之间，机位切换次数也少2到3次。</p></div>
+        </details>
+        <details>
+          <summary>《街角信号》完整版有几个机位？</summary>
+          <div class="ans"><p>10月26日练习室版本为双机位，一个固定全景、一个手推中景；10月30日舞台侧录为单机位摇摄，第1分12秒交叉换位处正面视角缺约1.4秒。</p></div>
+        </details>
+        <details>
+          <summary>横屏和竖屏该看哪一个？</summary>
+          <div class="ans"><p>学动作看横屏固定全景，队形变化不被裁切；看表情与手部细节用竖屏近景，但《午夜桥面》竖屏版第2段群舞会裁掉左右各一名成员，队形要靠横屏补。</p></div>
+        </details>
+        <details>
+          <summary>片尾口令和字幕不一致时信哪个？</summary>
+          <div class="ans"><p>复现动作用口令。《北向列车》加长版第14拍字幕写“右脚先”，镜头外口令是“左脚先”，以口令为准；只做观赏则不影响。</p></div>
+        </details>
+        <details>
+          <summary>翻跳发布需要注意什么？</summary>
+          <div class="ans"><p>非商用翻跳标注编舞师与曲目即可；商用需向编舞师账号私信取得书面同意。11月2日的置顶说明写明非商用不逐一回复，等了三天没回一般是默认不处理。</p></div>
+        </details>
+        <details>
+          <summary>为什么有的完整版反而看不清换位？</summary>
+          <div class="ans"><p>镜头在摇，人物出画。舞台侧录在灯光切换处会剪掉0.5到1秒，正好落在换位动作上。练习室固定全景在这类位置上更稳。</p></div>
+        </details>
+      </section>
+
+      <section class="section" id="comments" aria-labelledby="cmTitle">
+        <div class="kicker">观众说法</div>
+        <h2 id="cmTitle">评论：有人夸机位，有人嫌剪得碎</h2>
+        <div class="comments">
+          <article class="cmt">
+            <header><span class="av">林</span><span class="name">林间散步</span><span class="time">11月7日</span><span class="on">《街角信号》练习室版</span></header>
+            <p>第1分12秒那个交叉步，练习室版终于看清了。之前一直跟着舞台侧录学，方向整个反了，白练两天。</p>
+          </article>
+          <article class="cmt">
+            <header><span class="av b">周</span><span class="name">周末补觉</span><span class="time">11月6日</span><span class="on">《北向列车》加长版</span></header>
+            <p>片尾那41秒口令是真有用，第14拍左脚先这个细节，正片字幕根本没写。就是前面正片有点拖。</p>
+          </article>
+          <article class="cmt">
+            <header><span class="av c">橙</span><span class="name">橙子不甜</span><span class="time">11月5日</span><span class="on">《午夜桥面》竖屏版</span></header>
+            <p>竖屏版看着爽，结果第2段群舞两边的人都裁没了，队形完全看不出来。还得回去找横屏，来回切很麻烦。</p>
+          </article>
+          <article class="cmt">
+            <header><span class="av d">慢</span><span class="name">慢慢来</span><span class="time">11月4日</span><span class="on">《青色部落》舞台第二场</span></header>
+            <p>第3遍抢拍那个我觉得挺正常，现场本来就不会完全同步。拿来练听拍确实可以，别一直揪着说失误。</p>
+          </article>
+          <article class="cmt">
+            <header><span class="av">阿</span><span class="name">阿樾</span><span class="time">11月3日</span><span class="on">《街角信号》队形图第3版</span></header>
+            <p>队形图改成一个半肩宽之后，跟原片对得上了。之前按两个肩宽站，第2段整个偏出去半步。</p>
+          </article>
+          <article class="cmt">
+            <header><span class="av b">北</span><span class="name">北岸灯</span><span class="time">11月2日</span><span class="on">加长剪辑整体</span></header>
+            <p>加长版片头logo有点长，每次都要拖进度条。内容是好内容，就是入口不太友好。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="news" aria-labelledby="newsTitle">
+        <div class="kicker">相关资讯</div>
+        <h2 id="newsTitle">相关资讯：拍摄安排与公开说明</h2>
+        <ul class="tight">
+          <li><span class="date">11月7日</span><span class="title">练习室档期公布，11月10日与12日各留半天</span><span class="note">编舞师账号</span></li>
+          <li><span class="date">11月4日</span><span class="title">《玻璃回声》正背面同步对照补拍完成</span><span class="note">待剪辑</span></li>
+          <li><span class="date">11月2日</span><span class="title">翻跳授权说明置顶更新，非商用不逐一回复</span><span class="note">原文措辞</span></li>
+          <li><span class="date">10月30日</span><span class="title">舞台第二场机位从两台减为一台，理由是观众区布光冲突</span><span class="note">现场说明</span></li>
+        </ul>
+        <p class="lede" style="margin-top:10px">10月30日的机位减少直接解释了《街角信号》舞台侧录为何缺正面视角：不是剪辑选择，是现场只架了一台。这条属于事实层，与深度解析里的可反驳判断分开记录。</p>
+      </section>
+
+      <section class="section" id="related" aria-labelledby="relTitle">
+        <div class="kicker">相关推荐</div>
+        <h2 id="relTitle">相关推荐：按需要挑</h2>
+        <ul class="tags">
+          <li><a href="/#picked">街角信号完整版双机位</a></li>
+          <li><a href="/#picked">北向列车片尾口令</a></li>
+          <li><a href="/#picked">午夜桥面竖屏近景</a></li>
+          <li><a href="/#guide">横屏竖屏选择</a></li>
+          <li><a href="/#deep">机位数量对比</a></li>
+          <li><a href="/#rank">可学度榜</a></li>
+          <li><a href="/#channels">快速换位难点</a></li>
+          <li><a href="/#faq">翻跳授权说明</a></li>
+          <li><a href="/#timeline">队形走位图修订</a></li>
+        </ul>
+      </section>
+
+      <section class="section" id="voices" aria-labelledby="voTitle">
+        <div class="kicker">证言</div>
+        <h2 id="voTitle">跟跳者证言：两条具体经验</h2>
+        <blockquote class="quote">
+          <p>“我把《街角信号》第1分12秒截成两张图，正面和背面并排贴在镜子上，练了四天。第五天录自己，交叉步终于没踩到旁边人的位置。”</p>
+          <footer>—— 跟跳者 阿樾，11月6日留言，练习室学员</footer>
+        </blockquote>
+        <blockquote class="quote" style="margin-top:12px">
+          <p>“《北向列车》那37条口令，我用记号笔写在手背上，共写了13条。剩下24条太快记不住，就反复拖片尾那41秒。”</p>
+          <footer>—— 跟跳者 周末补觉，11月5日留言</footer>
+        </blockquote>
+      </section>
+
+    </div>
+
+    <aside class="side" aria-label="侧栏导航与索引">
+      <div class="side-box">
+        <h2>页面导航</h2>
+        <ul class="side-nav" id="sideNav">
+          <li><a href="/#overview">版本概览</a></li>
+          <li><a href="/#picked">精选推荐</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#channels">分类入口</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#timeline">时间线</a></li>
+          <li><a href="/#rank">可学度榜</a></li>
+          <li><a href="/#faq">常见疑问</a></li>
+          <li><a href="/#comments">评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#related">相关推荐</a></li>
+        </ul>
+      </div>
+      <div class="side-box">
+        <h3>最近修订</h3>
+        <ul class="side-list">
+          <li><a href="/#latest">《午夜桥面》竖屏版时长修正<small>11月6日 · 2分48秒</small></a></li>
+          <li><a href="/#deep">片尾口令文字转写完成<small>11月5日 · 37条</small></a></li>
+          <li><a href="/#channels">队形走位图第3版<small>11月8日 · 间距改一个半肩宽</small></a></li>
+        </ul>
+      </div>
+      <div class="side-box">
+        <h3>关键词索引</h3>
+        <ul class="tags">
+          <li><a href="/#picked">双机位</a></li>
+          <li><a href="/#picked">竖屏近景</a></li>
+          <li><a href="/#deep">加长剪辑</a></li>
+          <li><a href="/#guide">口令</a></li>
+          <li><a href="/#guide">交叉换位</a></li>
+          <li><a href="/#rank">抢拍</a></li>
+          <li><a href="/#comments">队形图</a></li>
+        </ul>
+      </div>
+      <div class="side-box">
+        <p class="side-note">示例数据说明：曲目、时长、机位数量与留言均为垂类示例条目，用于演示信息结构，不代表实际发布记录。</p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#ff6b4a"/>
+            <path d="M20 44c4-14 8-22 12-22s6 8 12 22" stroke="#0f1a2b" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="32" cy="16" r="4" fill="#ffd166"/>
+          </svg>
+          朴妮麦舞蹈完整版
+        </div>
+        <p>按曲目、机位与画幅整理片源，标注时长与镜头表，帮你在看之前就知道哪一条适合学动作。</p>
+      </div>
+      <div>
+        <h3>版本档案</h3>
+        <a href="/#overview">三类版本分工</a>
+        <a href="/#picked">精选推荐</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#timeline">时间线</a>
+      </div>
+      <div>
+        <h3>观看与学习</h3>
+        <a href="/#guide">体验指南</a>
+        <a href="/#rank">可学度榜</a>
+        <a href="/#channels">分类入口</a>
+        <a href="/#faq">常见疑问</a>
+      </div>
+      <div>
+        <h3>互动</h3>
+        <a href="/#comments">观众评论</a>
+        <a href="/#voices">跟跳者证言</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#news">相关资讯</a>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>页面更新时间 2026年11月8日，对应更新项：《街角信号》练习室双机位入库与队形走位图第3版。</span>
+      <span>站内曲目、时长与评论均为示例数据。</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部" title="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var nav=document.getElementById('navMain');
+  if(menuBtn&&nav){
+    menuBtn.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&nav.classList.contains('open')){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.focus();
+      }
+    });
+  }
+
+  var toTop=document.getElementById('toTop');
+  function onScroll(){
+    if(window.scrollY>420){toTop.classList.add('show');}else{toTop.classList.remove('show');}
+    highlight();
+  }
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  var sideLinks=Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var sections=sideLinks.map(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  });
+  function highlight(){
+    var pos=window.scrollY+document.documentElement.clientHeight*0.3;
+    var cur=-1;
+    sections.forEach(function(sec,i){
+      if(sec&&sec.offsetTop<=pos){cur=i;}
+    });
+    sideLinks.forEach(function(a,i){
+      if(i===cur){a.classList.add('active');}else{a.classList.remove('active');}
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  var q=document.getElementById('q');
+  var msg=document.createElement('p');
+  msg.className='search-msg';
+  msg.setAttribute('aria-live','polite');
+  if(q){
+    q.parentNode.appendChild(msg);
+    q.addEventListener('input',function(){
+      var kw=q.value.trim().toLowerCase();
+      var items=Array.prototype.slice.call(document.querySelectorAll('.card, .tight li, .rank li, .index-list li, .tags li, details, .cmt, .timeline li'));
+      if(!kw){
+        items.forEach(function(el){el.classList.remove('hidden');});
+        msg.textContent='';
+        return;
+      }
+      var hit=0;
+      items.forEach(function(el){
+        var t=(el.textContent||'').toLowerCase();
+        if(t.indexOf(kw)>-1){el.classList.remove('hidden');hit++;}else{el.classList.add('hidden');}
+      });
+      msg.textContent = hit ? '找到 '+hit+' 条相关条目' : '没有匹配的条目，换个曲目名试试，如“街角信号”“北向列车”。';
+    });
+  }
+})();
+</script>
+</body>
+  </html>
