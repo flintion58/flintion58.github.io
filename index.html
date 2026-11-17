@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>艾彩原创网vk-原创视觉作品与创作者社区</title>
+<meta name="description" content="艾彩原创网vk是原创视觉作品展示与创作者交流的社区，收录插画、角色设定、场景概念、动态视觉与模板素材，提供作品授权说明、创作流程拆解、版本更新记录与创作者访谈，方便检索与比对。">
+<meta name="keywords" content="艾彩原创网vk">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2a4a'/%3E%3Cpath d='M18 44 L32 16 L46 44 Z' fill='none' stroke='%23e8b44a' stroke-width='4' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='38' r='4' fill='%23e8b44a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#182338;
+  --ink-soft:#43506b;
+  --muted:#6b7690;
+  --line:#dde2ec;
+  --bg:#f6f7fa;
+  --card:#ffffff;
+  --brand:#1b2a4a;
+  --brand-2:#2d4670;
+  --accent:#c8892a;
+  --accent-soft:#f6ead2;
+  --good:#2e7a5a;
+  --warn:#a8552c;
+  --radius-s:6px;
+  --radius-m:10px;
+  --radius-l:16px;
+  --shadow-s:0 1px 2px rgba(24,35,56,.06),0 2px 8px rgba(24,35,56,.05);
+  --shadow-m:0 4px 16px rgba(24,35,56,.09);
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;--sp-7:48px;
+  --font: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --announce-h:44px;
+  --header-h:64px;
+  --stick-h:108px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--stick-h) + 8px)}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);
+  line-height:1.75;font-size:15.5px;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 var(--sp-3)}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0 0 var(--sp-3);padding-left:1.25em}
+li{margin:0 0 6px}
+img{max-width:100%;display:block}
+button{font-family:inherit}
+
+/* ---------- 吸顶组合 ---------- */
+.stick-wrap{position:sticky;top:0;z-index:60;box-shadow:var(--shadow-s)}
+.announce{
+  background:var(--brand);color:#f3e9d6;font-size:13px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  min-height:var(--announce-h);padding:6px 40px 6px 16px;position:relative;text-align:center;
+}
+.announce strong{color:#f7c96b;font-weight:600}
+.announce .dot{width:6px;height:6px;border-radius:50%;background:#f7c96b;display:inline-block;flex:none}
+.announce a{color:#ffe2ad;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+.announce .close{
+  position:absolute;right:8px;top:50%;transform:translateY(-50%);
+  background:transparent;border:0;color:#cbd3e4;font-size:18px;line-height:1;
+  cursor:pointer;padding:6px 8px;border-radius:var(--radius-s);
+}
+.announce .close:hover{background:rgba(255,255,255,.12);color:#fff}
+.announce .close:focus-visible, .menu-btn:focus-visible, a:focus-visible, summary:focus-visible, button:focus-visible{
+  outline:2px solid var(--accent);outline-offset:2px;
+}
+.site-header{
+  background:rgba(255,255,255,.97);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1200px;margin:0 auto;padding:0 var(--sp-5);
+  min-height:var(--header-h);display:flex;align-items:center;gap:var(--sp-5);
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand svg{width:34px;height:34px;flex:none}
+.brand-name{font-size:17px;font-weight:800;letter-spacing:.5px;color:var(--brand);white-space:nowrap}
+.main-nav{display:flex;gap:var(--sp-4);flex-wrap:wrap;align-items:center;margin-left:var(--sp-4)}
+.main-nav a{
+  font-size:14px;color:var(--ink-soft);padding:6px 2px;border-bottom:2px solid transparent;
+  white-space:nowrap;
+}
+.main-nav a:hover{color:var(--brand);border-bottom-color:var(--accent-soft);text-decoration:none}
+.header-tools{margin-left:auto;display:flex;align-items:center;gap:var(--sp-3)}
+.search-box{position:relative;display:flex;align-items:center}
+.search-box input{
+  width:190px;padding:7px 10px 7px 32px;border:1px solid var(--line);border-radius:var(--radius-m);
+  font-size:13px;background:var(--bg);color:var(--ink);transition:border-color .15s;
+}
+.search-box input:focus{border-color:var(--brand-2);background:#fff;outline:none}
+.search-box svg{position:absolute;left:9px;width:15px;height:15px;color:var(--muted);pointer-events:none}
+.search-result{
+  position:absolute;top:calc(100% + 6px);right:0;width:290px;max-height:300px;overflow:auto;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-m);
+  box-shadow:var(--shadow-m);padding:6px;z-index:80;display:none;
+}
+.search-result.open{display:block}
+.search-result .sr-item{display:block;padding:7px 10px;font-size:13.5px;border-radius:var(--radius-s);color:var(--ink-soft)}
+.search-result .sr-item:hover{background:var(--accent-soft);text-decoration:none}
+.search-result .sr-empty{padding:10px;font-size:13px;color:var(--muted)}
+.menu-btn{
+  display:none;background:#fff;border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:7px 10px;font-size:13px;cursor:pointer;color:var(--ink-soft);align-items:center;gap:6px;
+}
+.menu-btn .bars{display:inline-block;width:15px;height:2px;background:currentColor;position:relative;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor}
+
+/* ---------- 布局 ---------- */
+.container{max-width:1200px;margin:0 auto;padding:0 var(--sp-5)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--sp-6);margin-top:var(--sp-6);margin-bottom:var(--sp-7)}
+main{min-width:0}
+aside{min-width:0}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;background:
+    radial-gradient(700px 340px at 88% -10%, #263a5e 0%, transparent 62%),
+    linear-gradient(120deg,#16223c 0%, #1e3054 55%, #24406e 100%);
+  color:#eef1f7;
+}
+.hero-inner{
+  max-width:1200px;margin:0 auto;padding:var(--sp-7) var(--sp-5) var(--sp-6);
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:var(--sp-6);align-items:center;
+}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1px;color:#f7c96b;border:1px solid rgba(247,201,107,.45);padding:4px 12px;border-radius:999px;margin-bottom:var(--sp-4)}
+.hero h1{font-size:clamp(26px,4vw,38px);letter-spacing:1px;color:#fff;margin-bottom:var(--sp-4)}
+.hero p.lead{color:#c9d3e6;font-size:15.5px;max-width:56ch;margin-bottom:var(--sp-5)}
+.hero-actions{display:flex;gap:var(--sp-3);flex-wrap:wrap;margin-bottom:var(--sp-5)}
+.btn{
+  display:inline-block;padding:9px 18px;border-radius:var(--radius-m);font-size:14px;
+  border:1px solid transparent;cursor:pointer;transition:transform .15s,background .15s;
+}
+.btn-primary{background:var(--accent);color:#1a1206;font-weight:700}
+.btn-primary:hover{background:#dda13e;text-decoration:none;transform:translateY(-2px)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.35);color:#e8edf7}
+.btn-ghost:hover{background:rgba(255,255,255,.1);text-decoration:none;transform:translateY(-2px)}
+.hero-stats{display:flex;gap:var(--sp-6);flex-wrap:wrap}
+.hero-stats div span{display:block;font-size:22px;font-weight:800;color:#f7c96b;line-height:1.2}
+.hero-stats div small{font-size:12.5px;color:#a9b6d0}
+.hero-art{position:relative;height:270px}
+.hero-art svg{width:100%;height:100%}
+
+/* ---------- 板块通用 ---------- */
+.section{margin-bottom:var(--sp-7)}
+.sec-head{display:flex;align-items:baseline;gap:var(--sp-3);border-bottom:2px solid var(--line);padding-bottom:var(--sp-2);margin-bottom:var(--sp-5);flex-wrap:wrap}
+.sec-head h2{font-size:20px;color:var(--brand)}
+.sec-head .tag{font-size:12px;color:var(--muted);letter-spacing:.5px}
+.sec-head .more{margin-left:auto;font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);box-shadow:var(--shadow-s)}
+.pad{padding:var(--sp-5)}
+.muted{color:var(--muted);font-size:13px}
+.badge{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:#7a5314;line-height:1.6;white-space:nowrap}
+.badge.blue{background:#e4ecfa;color:#26436f}
+.badge.green{background:#e2f1ea;color:#1f6147}
+.badge.gray{background:#eef0f4;color:#5a6478}
+.badge.red{background:#fbe6dd;color:#9c4421}
+
+/* 领域概览：非对称组合 */
+.overview-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:var(--sp-4)}
+.overview-lead{padding:var(--sp-5);background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);box-shadow:var(--shadow-s)}
+.overview-lead h3{font-size:16px;margin-bottom:var(--sp-2);color:var(--brand)}
+.overview-side{display:grid;gap:var(--sp-4)}
+.mini-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);padding:var(--sp-4);box-shadow:var(--shadow-s)}
+.mini-card h4{font-size:14px;color:var(--brand);margin-bottom:4px}
+.mini-card p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+.concept-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--sp-3)}
+.concept-list span{font-size:12.5px;background:#eef2f8;color:var(--ink-soft);border-radius:var(--radius-s);padding:3px 9px}
+
+/* 精选推荐：网格卡片 */
+.pick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-4)}
+.pick-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);overflow:hidden;box-shadow:var(--shadow-s);display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.pick-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-m)}
+.pick-card img{width:100%;height:134px;object-fit:cover}
+.pick-body{padding:var(--sp-3) var(--sp-4) var(--sp-4);display:flex;flex-direction:column;gap:6px;flex:1}
+.pick-body h3{font-size:15px;color:var(--brand)}
+.pick-body p{margin:0;font-size:13px;color:var(--ink-soft);flex:1}
+.meta{font-size:12px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
+
+/* 最新更新：紧凑列表 */
+.update-list{list-style:none;padding:0;margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);overflow:hidden;box-shadow:var(--shadow-s)}
+.update-list li{display:flex;gap:var(--sp-4);padding:var(--sp-4) var(--sp-5);border-bottom:1px solid var(--line);align-items:flex-start}
+.update-list li:last-child{border-bottom:0}
+.update-list time{flex:none;font-size:12.5px;color:var(--muted);width:64px;padding-top:2px}
+.update-list .u-body{min-width:0}
+.update-list .u-body strong{font-size:14.5px;color:var(--brand)}
+.update-list .u-body p{margin:2px 0 0;font-size:13px;color:var(--ink-soft)}
+
+/* 分类入口：标签索引 */
+.channel-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--sp-3)}
+.channel-item{
+  display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:var(--sp-3) var(--sp-4);transition:border-color .15s,transform .15s;
+}
+.channel-item:hover{border-color:var(--brand-2);text-decoration:none;transform:translateY(-2px)}
+.channel-item strong{display:block;font-size:14px;color:var(--brand);margin-bottom:2px}
+.channel-item span{font-size:12px;color:var(--muted)}
+
+/* 深度解析：分栏正文 */
+.deep{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);padding:var(--sp-5) var(--sp-6);box-shadow:var(--shadow-s)}
+.deep-cols{column-count:2;column-gap:var(--sp-6)}
+.deep h3{font-size:16px;color:var(--brand);margin:var(--sp-4) 0 var(--sp-2);break-after:avoid}
+.deep h3:first-child{margin-top:0}
+.deep p{font-size:14.5px;color:var(--ink-soft)}
+.deep strong{color:var(--ink)}
+.callout{
+  break-inside:avoid;background:#faf5e9;border-left:4px solid var(--accent);
+  padding:var(--sp-3) var(--sp-4);border-radius:0 var(--radius-s) var(--radius-s) 0;margin:var(--sp-4) 0;
+}
+.callout p{margin:0;font-size:13.5px;color:#5c4519}
+.datalist{break-inside:avoid;margin:var(--sp-3) 0;padding:var(--sp-3) var(--sp-4);background:#f2f5fb;border-radius:var(--radius-m);font-size:13px;color:var(--ink-soft)}
+.datalist b{color:var(--brand)}
+
+/* 体验指南：编号步骤 */
+.steps{list-style:none;counter-reset:step;padding:0;margin:0;display:grid;gap:var(--sp-3)}
+.steps li{
+  counter-increment:step;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:var(--sp-4) var(--sp-4) var(--sp-4) 62px;position:relative;box-shadow:var(--shadow-s);
+}
+.steps li::before{
+  content:counter(step,decimal-leading-zero);position:absolute;left:var(--sp-4);top:var(--sp-4);
+  font-size:16px;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums;
+}
+.steps li strong{display:block;font-size:14.5px;color:var(--brand);margin-bottom:2px}
+.steps li p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+
+/* 对照面板 */
+.compare{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden;font-size:13.5px}
+.compare th,.compare td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.compare thead th{background:#eff2f8;color:var(--brand);font-size:13px}
+.compare tbody tr:last-child td{border-bottom:0}
+.compare td:first-child{color:var(--brand);font-weight:600;white-space:nowrap}
+
+/* FAQ */
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);margin-bottom:var(--sp-3);box-shadow:var(--shadow-s)}
+.faq summary{cursor:pointer;padding:var(--sp-4) var(--sp-5);font-size:14.5px;font-weight:600;color:var(--brand);list-style:none;position:relative;padding-right:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:var(--sp-5);top:50%;transform:translateY(-50%);font-size:18px;color:var(--accent);font-weight:400}
+.faq details[open] summary::after{content:"−"}
+.faq .faq-body{padding:0 var(--sp-5) var(--sp-4);font-size:14px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:var(--sp-3)}
+
+/* 评论 */
+.comments{display:grid;gap:var(--sp-3)}
+.comment{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-m);padding:var(--sp-4);box-shadow:var(--shadow-s)}
+.comment .c-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.comment .avatar{width:28px;height:28px;border-radius:50%;background:var(--brand-2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:none}
+.comment .c-name{font-weight:600;color:var(--ink);font-size:13.5px}
+.comment p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+
+/* 资讯列表（侧栏 + 主区共用样式） */
+.news-list{list-style:none;padding:0;margin:0;display:grid;gap:var(--sp-3)}
+.news-list li{font-size:13.5px;color:var(--ink-soft);padding-bottom:var(--sp-3);border-bottom:1px dashed var(--line)}
+.news-list li:last-child{border-bottom:0;padding-bottom:0}
+.news-list strong{display:block;color:var(--ink);font-size:14px;margin-bottom:2px}
+.news-list .src{font-size:12px;color:var(--muted);display:block;margin-top:3px}
+
+/* 相关推荐标签 */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px}
+.tag-cloud a{font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink-soft)}
+.tag-cloud a:hover{border-color:var(--accent);color:#7a5314;background:var(--accent-soft);text-decoration:none}
+
+/* 榜单 */
+.rank{list-style:none;padding:0;margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);overflow:hidden;box-shadow:var(--shadow-s)}
+.rank li{display:flex;align-items:center;gap:var(--sp-4);padding:var(--sp-3) var(--sp-5);border-bottom:1px solid var(--line)}
+.rank li:last-child{border-bottom:0}
+.rank .no{font-size:15px;font-weight:800;color:var(--accent);width:26px;flex:none;font-variant-numeric:tabular-nums}
+.rank .r-body{flex:1;min-width:0;font-size:14px;color:var(--ink-soft)}
+.rank .r-body strong{color:var(--brand);display:block;font-size:14.5px}
+.rank .score{font-size:12.5px;color:var(--muted);flex:none}
+
+/* 引语卡 / 创作者证言 */
+.quote-card{background:linear-gradient(135deg,#1e3054,#2d4670);color:#e8eef9;border-radius:var(--radius-l);padding:var(--sp-5) var(--sp-6);box-shadow:var(--shadow-m)}
+.quote-card blockquote{margin:0;font-size:15px;line-height:1.85}
+.quote-card .q-by{margin-top:var(--sp-3);font-size:13px;color:#aebdd8}
+.quote-card .q-by b{color:#f7c96b;font-weight:600}
+
+/* 侧栏 */
+.side-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);padding:var(--sp-4) var(--sp-5);box-shadow:var(--shadow-s);margin-bottom:var(--sp-4)}
+.side-card h3{font-size:14.5px;color:var(--brand);margin-bottom:var(--sp-3);padding-bottom:var(--sp-2);border-bottom:1px solid var(--line)}
+.side-nav{list-style:none;padding:0;margin:0}
+.side-nav a{display:block;font-size:13.5px;padding:5px 10px;border-radius:var(--radius-s);color:var(--ink-soft);border-left:2px solid transparent}
+.side-nav a:hover{background:var(--bg);text-decoration:none}
+.side-nav a.active{background:var(--accent-soft);color:#7a5314;border-left-color:var(--accent);font-weight:600}
+
+/* 页脚 */
+.site-footer{background:#141d2f;color:#a9b4c8;padding:var(--sp-6) 0 var(--sp-5);font-size:13.5px;border-top:3px solid var(--accent)}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 var(--sp-5)}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:var(--sp-5);padding-bottom:var(--sp-5);border-bottom:1px solid #263149}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:var(--sp-3)}
+.footer-brand svg{width:32px;height:32px}
+.footer-brand b{color:#eef2f8;font-size:16px;letter-spacing:.5px}
+.footer-top p{font-size:13px;line-height:1.8;margin:0;color:#93a0b8}
+.footer-top h4{font-size:13.5px;color:#e4e9f2;margin-bottom:var(--sp-3)}
+.footer-links{list-style:none;padding:0;margin:0}
+.footer-links li{margin-bottom:6px}
+.footer-links a{color:#a9b4c8;font-size:13px}
+.footer-links a:hover{color:#f7c96b;text-decoration:none}
+.footer-note{background:#0f1726;border-radius:var(--radius-m);padding:var(--sp-3) var(--sp-4);font-size:12.5px;color:#8b97ae;margin:var(--sp-4) 0;line-height:1.8}
+.footer-note b{color:#c9d3e6;font-weight:600}
+.copyright{display:flex;justify-content:space-between;gap:var(--sp-4);flex-wrap:wrap;font-size:12.5px;color:#77839a}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:20px;bottom:24px;z-index:70;width:44px;height:44px;border-radius:50%;
+  background:var(--brand);color:#fff;border:0;font-size:18px;cursor:pointer;
+  box-shadow:var(--shadow-m);opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .2s,transform .2s,visibility .2s;
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--brand-2)}
+
+/* 平板 */
+@media (max-width:960px){
+  .layout{grid-template-columns:minmax(0,1fr);gap:var(--sp-5)}
+  aside{order:2}
+  .hero-inner{grid-template-columns:minmax(0,1fr);gap:var(--sp-4)}
+  .hero-art{height:180px;max-width:420px}
+  .pick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .channel-index{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .overview-grid{grid-template-columns:1fr}
+  .deep-cols{column-count:1}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+/* 手机 */
+@media (max-width:640px){
+  :root{--stick-h:104px}
+  .container{padding:0 var(--sp-4)}
+  .header-inner{padding:0 var(--sp-4);gap:var(--sp-3);flex-wrap:nowrap}
+  .main-nav{
+    position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:stretch;gap:0;padding:var(--sp-2) var(--sp-4) var(--sp-3);
+    margin:0;display:none;box-shadow:var(--shadow-m);
+  }
+  .main-nav.open{display:flex}
+  .main-nav a{padding:10px 4px;border-bottom:1px solid var(--line);font-size:14px}
+  .main-nav a:last-child{border-bottom:0}
+  .header-inner{position:relative}
+  .menu-btn{display:inline-flex}
+  .search-box input{width:120px;padding-right:6px}
+  .search-result{width:min(88vw,300px)}
+  .announce{font-size:12px;padding-right:34px;justify-content:flex-start;text-align:left}
+  .announce .hide-sm{display:none}
+  .hero-inner{padding:var(--sp-6) var(--sp-4) var(--sp-5)}
+  .hero-stats{gap:var(--sp-5)}
+  .pick-grid{grid-template-columns:1fr}
+  .channel-index{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .deep{padding:var(--sp-4)}
+  .deep-cols{column-count:1}
+  .update-list li{flex-direction:column;gap:2px;padding:var(--sp-3) var(--sp-4)}
+  .update-list time{width:auto}
+  .footer-top{grid-template-columns:1fr}
+  .to-top{right:14px;bottom:16px;width:40px;height:40px}
+  .compare{display:block;overflow-x:auto;white-space:nowrap}
+  .quote-card{padding:var(--sp-5) var(--sp-4)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important;scroll-behavior:auto !important}
+  html{scroll-behavior:auto}
+  .pick-card:hover,.channel-item:hover,.btn:hover{transform:none}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"艾彩原创网vk",
+  "description":"原创视觉作品展示与创作者交流社区，收录插画、角色设定、场景概念、动态视觉与模板素材。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"作品授权类型里“个人非商用”和“商用二创”差在哪里？",
+      "acceptedAnswer":{"@type":"Answer","text":"个人非商用只允许个人欣赏、学习临摹与同人非售卖分享；商用二创允许把作品元素用于店铺物料、视频封面等营利场景，但通常要求署名、限制二次转售，且平台抽成比例与授权期不同。"}
+    },
+    {
+      "@type":"Question",
+      "name":"角色设定稿交付时通常包含哪几份文件？",
+      "acceptedAnswer":{"@type":"Answer","text":"标准交付是三视图分层 PSD、透明底 PNG 立绘和一份角色设定表，设定表记录身高比例、主色 hex、服装结构、表情差分与禁止改动项。"}
+    },
+    {
+      "@type":"Question",
+      "name":"发布作品前怎样核对是否有版权风险？",
+      "acceptedAnswer":{"@type":"Answer","text":"按三步核对：素材来源清单逐项写明字体、笔刷、参考图出处；确认参考图没有被直接描摹；确认作品中不含他人角色、商标与真实人物肖像。缺少任一项记录，建议先补齐再发布。"}
+    },
+    {
+      "@type":"Question",
+      "name":"动态视觉作品的文件体积为什么差别很大？",
+      "acceptedAnswer":{"@type":"Answer","text":"主要取决于帧率、画布尺寸和编码方式。同一条 6 秒循环，30fps、1080×1080 的 ProRes 文件常在 120MB 以上，转成 H.264 后压缩到 8—15MB，画质差异在暗部渐变处最明显。"}
+    }
+  ]
+}
+</script>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶：公告条 + 页头 -->
+<div class="stick-wrap">
+  <div class="announce" id="announceBar">
+    <span class="dot" aria-hidden="true"></span>
+    <span><strong>艾彩原创网vk</strong> 11月7日更新：角色设定区新增 42 组三视图分层源文件，<span class="hide-sm">授权模板同步到 v2.4，</span></span>
+    <a href="/#latest">查看更新明细</a>
+    <button class="close" type="button" aria-label="关闭公告">×</button>
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/#top" aria-label="返回首页">
+        <svg viewBox="0 0 64 64" role="img" aria-label="三角与圆点组成的品牌图形">
+          <rect width="64" height="64" rx="14" fill="#1b2a4a"/>
+          <path d="M18 44 L32 16 L46 44 Z" fill="none" stroke="#e8b44a" stroke-width="4" stroke-linejoin="round"/>
+          <circle cx="32" cy="38" r="4" fill="#e8b44a"/>
+        </svg>
+        <span class="brand-name">艾彩原创网vk</span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#picks">精选作品</a>
+        <a href="/#latest">更新记录</a>
+        <a href="/#channels">分类索引</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#rank">口碑榜</a>
+      </nav>
+      <div class="header-tools">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input type="search" id="siteSearch" placeholder="搜索作品或频道" aria-label="站内搜索" autocomplete="off">
+          <div class="search-result" id="searchResult" role="listbox" aria-label="搜索结果"></div>
+        </div>
+        <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mainNav">
+          <span class="bars" aria-hidden="true"></span>菜单
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-kicker">原创视觉 · 作品与授权</span>
+      <h1>艾彩原创网vk</h1>
+      <p class="lead">收插画、角色设定、场景概念、动态视觉与模板素材。每份作品带授权说明、可交付文件清单和版本记录，方便设计与内容团队按项目需求比对后再决定是否使用。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#picks">浏览本周精选</a>
+        <a class="btn btn-ghost" href="/#guide">看授权与交付流程</a>
+      </div>
+      <div class="hero-stats">
+        <div><span>2,860</span><small>在架原创作品</small></div>
+        <div><span>316</span><small>已建档创作者</small></div>
+        <div><span>42</span><small>本周新增设定稿</small></div>
+        <div><span>v2.4</span><small>授权模板版本</small></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 420 270" role="img" aria-label="层叠画框与色块构成的原创视觉构图">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e8b44a"/><stop offset="1" stop-color="#c8892a"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3f5c8c"/><stop offset="1" stop-color="#22355a"/>
+          </linearGradient>
+        </defs>
+        <rect x="30" y="34" width="200" height="150" rx="10" fill="url(#g2)" opacity="0.9"/>
+        <rect x="60" y="54" width="200" height="150" rx="10" fill="#f2f4f9" opacity="0.14"/>
+        <rect x="150" y="70" width="210" height="160" rx="12" fill="none" stroke="#f7c96b" stroke-width="2" opacity="0.8"/>
+        <circle cx="228" cy="140" r="46" fill="url(#g1)" opacity="0.9"/>
+        <path d="M228 110 L256 170 L200 170 Z" fill="#16223c" opacity="0.85"/>
+        <circle cx="228" cy="150" r="7" fill="#f7c96b"/>
+        <line x1="30" y1="228" x2="390" y2="228" stroke="#3f5c8c" stroke-width="2" stroke-dasharray="6 8"/>
+        <rect x="52" y="206" width="44" height="6" rx="3" fill="#e8b44a"/>
+        <rect x="104" y="206" width="70" height="6" rx="3" fill="#3f5c8c"/>
+        <rect x="182" y="206" width="34" height="6" rx="3" fill="#3f5c8c"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="layout">
+    <main>
+
+      <!-- 领域概览 -->
+      <section class="section" id="overview">
+        <div class="sec-head">
+          <h2>领域概览：原创视觉作品都包含什么</h2>
+          <span class="tag">作品类型 · 授权 · 交付</span>
+        </div>
+        <div class="overview-grid">
+          <div class="overview-lead">
+            <h3>从一幅立绘到一套可交付文件</h3>
+            <p>原创视觉作品的边界比想象中宽。插画按用途分单幅约稿、商用主视觉、社媒配图；角色设定则要交三视图、表情差分和设定表；场景概念偏重空间关系与光影方案；动态视觉涉及帧率、循环长度与编码格式；模板素材提供可编辑的分层文件，买家替换文案即可产出新图。</p>
+            <p>这些品类共用一套底层规则：作者署名、授权范围、可修改程度、交付格式。规则写在作品详情页的授权面板里，很多争议恰好出在买家只看了缩略图、没看授权面板。</p>
+            <div class="concept-list">
+              <span>三视图分层</span><span>表情差分</span><span>主色 hex</span><span>授权期</span>
+              <span>商用二创</span><span>署名方式</span><span>loop 循环帧</span><span>透明底 PNG</span>
+              <span>参考图清单</span><span>禁止改动项</span>
+            </div>
+          </div>
+          <div class="overview-side">
+            <div class="mini-card">
+              <h4>角色设定稿</h4>
+              <p>正视图、侧视图、背视图分层，配身高比例与服装结构说明。本周新增 42 组。</p>
+            </div>
+            <div class="mini-card">
+              <h4>场景概念图</h4>
+              <p>先出灰阶明暗分层，再叠色。用于动画、游戏与沉浸式展陈的前期。</p>
+            </div>
+            <div class="mini-card">
+              <h4>动态视觉片段</h4>
+              <p>6 秒、12 秒两种循环长度最常见，交付 ProRes 母版与 H.264 预览。</p>
+            </div>
+            <div class="mini-card">
+              <h4>模板素材</h4>
+              <p>分层 PSD 或矢量源文件，文本框与配色区已命名，改起来省事。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 精选推荐 -->
+      <section class="section" id="picks">
+        <div class="sec-head">
+          <h2>本周精选作品推荐</h2>
+          <span class="tag">编辑手工筛选 · 11月4日—11月8日</span>
+          <a class="more" href="/#channels">按分类找 →</a>
+        </div>
+        <div class="pick-grid">
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/aicai-char-01/600/360" width="600" height="360" loading="lazy" alt="银发少女角色三视图分层稿，正面、侧面与背面排列">
+            <div class="pick-body">
+              <span class="badge blue">角色设定</span>
+              <h3>雾港巡夜人三视图分层稿</h3>
+              <p>作者 @南屿绘，12 层 PSD，含 6 套表情差分与服装拆件。授权可商用二创，需署名。</p>
+              <div class="meta"><span>11月6日</span><span>浏览 1,284</span><span>收藏 96</span></div>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/aicai-scene-07/600/360" width="600" height="360" loading="lazy" alt="雨夜旧城区街角场景概念图，霓虹与湿地面反光">
+            <div class="pick-body">
+              <span class="badge">场景概念</span>
+              <h3>雨夜旧城区街角光影方案</h3>
+              <p>作者 @灯下灰，灰阶明暗分三层交付，附色板文件。个人非商用授权，禁转售。</p>
+              <div class="meta"><span>11月5日</span><span>浏览 976</span><span>收藏 71</span></div>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/aicai-motion-03/600/360" width="600" height="360" loading="lazy" alt="抽象几何动态视觉循环片段，金色三角与深蓝底色">
+            <div class="pick-body">
+              <span class="badge green">动态视觉</span>
+              <h3>六秒几何循环片段 · 金蓝版</h3>
+              <p>作者 @赤盐，30fps、1080×1080，ProRes 母版加 H.264 预览，支持改色区。</p>
+              <div class="meta"><span>11月3日</span><span>浏览 745</span><span>收藏 58</span></div>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/aicai-tpl-11/600/360" width="600" height="360" loading="lazy" alt="活动海报模板分层展示，主标题区与配图区用不同色块标出">
+            <div class="pick-body">
+              <span class="badge gray">模板素材</span>
+              <h3>秋季展陈海报分层模板</h3>
+              <p>作者 @纸间工房，PSD 分层命名规范，主标题区 48pt 起，适合快展物料。</p>
+              <div class="meta"><span>11月2日</span><span>浏览 1,102</span><span>收藏 133</span></div>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/aicai-char-09/600/360" width="600" height="360" loading="lazy" alt="机械师角色设定稿，工具挂件与护目镜细节放大">
+            <div class="pick-body">
+              <span class="badge blue">角色设定</span>
+              <h3>蒸汽机械师配件拆解表</h3>
+              <p>作者 @铁皮雀，配件单独成层，设定表记录 14 处禁止改动项，适合二创协商。</p>
+              <div class="meta"><span>11月1日</span><span>浏览 688</span><span>收藏 49</span></div>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/aicai-illust-05/600/360" width="600" height="360" loading="lazy" alt="单幅插画，窗边读书人物与暖色台灯光">
+            <div class="pick-body">
+              <span class="badge red">单幅插画</span>
+              <h3>窗边夜读单幅插画</h3>
+              <p>作者 @十七木，3508×2480、300dpi，已做出血，可用作书店橱窗主视觉。</p>
+              <div class="meta"><span>10月30日</span><span>浏览 1,530</span><span>收藏 142</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="section" id="latest">
+        <div class="sec-head">
+          <h2>最新更新记录</h2>
+          <span class="tag">按时间倒序 · 可核对</span>
+        </div>
+        <ul class="update-list">
+          <li>
+            <time datetime="2026-11-08">今天</time>
+            <div class="u-body">
+              <strong>授权模板升级到 v2.4</strong>
+              <p>新增“商用二创”勾选项，明确署名位置与授权期字段；旧版授权页仍可查阅，不做追溯修改。</p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2026-11-07">昨天</time>
+            <div class="u-body">
+              <strong>角色设定区新增 42 组三视图</strong>
+              <p>其中 17 组附带表情差分，9 组含配件拆解层。作者 @南屿绘、@铁皮雀 各更新 5 组以上。</p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2026-11-06">11月6日</time>
+            <div class="u-body">
+              <strong>搜索支持按授权类型筛选</strong>
+              <p>筛选项：个人非商用、商用二创、买断。结果页显示授权标签，与详情页授权面板一致。</p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2026-11-04">11月4日</time>
+            <div class="u-body">
+              <strong>动态视觉区新增编码说明</strong>
+              <p>每条片段标注母版格式、预览格式与文件体积范围，避免下载后才发现剪映工程不兼容。</p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2026-11-02">11月2日</time>
+            <div class="u-body">
+              <strong>创作者主页增加交付清单栏</strong>
+              <p>列出常交文件类型、平均交付周期与是否接急单，数据来自近 90 天已完结订单。</p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2026-10-31">10月31日</time>
+            <div class="u-body">
+              <strong>评论支持标注具体条目</strong>
+              <p>评论时可关联作品编号或文件层名，讨论三视图分层问题时不再只靠描述位置。</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="section" id="channels">
+        <div class="sec-head">
+          <h2>分类索引：按需求直接进入</h2>
+          <span class="tag">10 个常搜类别</span>
+        </div>
+        <div class="channel-index">
+          <a class="channel-item" href="/#picks"><strong>角色三视图</strong><span>分层源文件 · 设定表</span></a>
+          <a class="channel-item" href="/#picks"><strong>表情差分包</strong><span>6—12 套 · 透明底</span></a>
+          <a class="channel-item" href="/#picks"><strong>场景概念图</strong><span>灰阶分层 · 色板</span></a>
+          <a class="channel-item" href="/#deep"><strong>商用授权说明</strong><span>授权期 · 署名 · 抽成</span></a>
+          <a class="channel-item" href="/#picks"><strong>动态视觉循环</strong><span>6s / 12s · 30fps</span></a>
+          <a class="channel-item" href="/#picks"><strong>海报分层模板</strong><span>PSD 命名规范</span></a>
+          <a class="channel-item" href="/#picks"><strong>单幅插画约稿</strong><span>300dpi · 含出血</span></a>
+          <a class="channel-item" href="/#guide"><strong>二创协商流程</strong><span>禁止改动项 · 回稿</span></a>
+          <a class="channel-item" href="/#rank"><strong>创作者口碑榜</strong><span>交付准时率 · 返修率</span></a>
+          <a class="channel-item" href="/#faq"><strong>版权核对清单</strong><span>字体 · 笔刷 · 参考图</span></a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="section" id="deep">
+        <div class="sec-head">
+          <h2>深度解析：授权面板里最容易被忽略的三行字</h2>
+          <span class="tag">主体阅读 · 附核对结构</span>
+        </div>
+        <div class="deep">
+          <div class="deep-cols">
+            <p>原创作品的纠纷大多不发生在画面本身，而在详情页授权面板的附注区。以 10 月 28 日 @灯下灰 的《雨夜旧城区街角光影方案》为例，主授权写“个人非商用”，附注第三行写“允许同人二次绘制，但不得用于短视频封面收益分成”。有买家把该场景做成 3 分钟口播视频封面并挂载商单，10 月 30 日被作者要求下架。双方都承认画面授权已读，分歧只在“封面是否属于收益分成场景”。</p>
+            <p>这件事能拆成一个可核对的判断：授权面板的附注行效力等同于主授权，前提是它在购买前可见。该页面的附注行位于折叠区，默认收起，购买流程里没有二次确认弹窗。作者后来在 11 月 1 日把附注移到了主授权下方，展开可见。改动前后，同一份作品的授权表述没有变，只是可见性变了——这也是不少人误以为“授权条款改了”的原因。</p>
+            <h3>版本差异：v2.3 与 v2.4 的署名要求</h3>
+            <p>v2.3 授权模板只要求“在作品发布页面注明作者ID”，位置不限。v2.4 明确署名须出现在画面可见区域或视频前 3 秒内，并要求同时写出作者ID和作品编号。以 11 月 6 日 @南屿绘 的《雾港巡夜人三视图分层稿》为例，作者ID是 @南屿绘，作品编号 AC-2026-1106-17。两者缺一，视为署名不完整。</p>
+            <div class="datalist">
+              <b>可核对结构（授权判断拆解）</b><br>
+              ① 主授权类型：个人非商用 / 商用二创 / 买断<br>
+              ② 附注限制：署名位置、授权期、是否允许改色、是否允许拆件独用<br>
+              ③ 可见性：是否默认展开、购买前是否二次确认<br>
+              ④ 证据：详情页快照日期、订单号、作者回复原文<br>
+              四项齐全，争议通常能在 48 小时内落地。
+            </div>
+            <h3>说法差异：作者与买家的两种理解</h3>
+            <p>作者侧把“商用二创”理解成“可用于营利物料，但不得转售源文件”；买家侧常见理解是“既然付了商用价，源文件可自由分发”。这不是文字游戏，两组人引用的都是同一段授权文案。11 月 1 日平台在授权面板增加一行提示：“源文件所有权不随商用授权转移”，并把该行字号提到 13px。此后同类询问从每日约 20 条降到约 7 条，客服记录可查。</p>
+            <div class="callout">
+              <p>可被反驳的判断：授权面板折叠不可怕，可怕的是折叠区里放着与主授权冲突的条款。若附注与主授权不一致且未做二次确认，按现有处理惯例以对买家更有利的一条为准。</p>
+            </div>
+            <h3>案例时间线：一次下架如何收场</h3>
+            <p>10 月 30 日买家收到下架通知；10 月 31 日双方在作品评论区各留一条说明；11 月 1 日作者调整附注位置；11 月 2 日买家替换封面并重新署名；11 月 3 日作者在主页发布一条“本次协商已结束，作品继续展示”的短说明。整个过程没有进入投诉流程，作品页面浏览量从 976 涨到 1,200 以上，评论里三条指向附注行，两条讨论封面尺寸。</p>
+            <p>另一个对照样本是 11 月 4 日 @纸间工房 的《秋季展陈海报分层模板》。该模板授权直接写明“可改色、可换文案、不可拆出单个图形元素另售”，买家在 11 月 5 日询问能否把主标题花边单独用于另一张海报，作者回复“可以，属于改色范围”。同一类“拆件”问题，两个作者给出相反答复，说明授权文案的颗粒度仍依赖作者个人表述，买家下单前的确认动作不能省。</p>
+            <h3>规则前后变化：署名从“建议”到“必填”</h3>
+            <p>9 月版授权说明写“建议注明作者”，10 月 20 日改为“须注明作者”，11 月 6 日进一步要求注明作品编号。三次改动都保留了旧版本入口。核对时看订单生成日期对应的版本号即可，别用今天看到的条款去衡量 10 月 5 日的订单。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 体验指南 -->
+      <section class="section" id="guide">
+        <div class="sec-head">
+          <h2>体验指南：从筛选到拿到源文件</h2>
+          <span class="tag">六步 · 含授权类型对照</span>
+        </div>
+        <ol class="steps">
+          <li><strong>先定用途，再定品类</strong><p>店铺物料优先看商用二创授权的模板与插画；个人练习可用个人非商用作品，临摹前确认是否允许描摹。</p></li>
+          <li><strong>打开授权面板逐行看</strong><p>主授权、附注限制、可见性三项都要过一遍。折叠区有内容的，点开再决定。</p></li>
+          <li><strong>核对交付文件清单</strong><p>角色设定看是否有分层 PSD 与设定表；动态视觉看母版格式和循环帧数；插画看 dpi 与出血。</p></li>
+          <li><strong>确认署名方式</strong><p>v2.4 要求作者ID加作品编号，位置在画面可见区或视频前 3 秒。商用二创还需确认署名是否随物料一起展示。</p></li>
+          <li><strong>留好订单与页面快照</strong><p>订单生成日期决定适用哪版授权。快照至少保留授权面板展开后的完整截图。</p></li>
+          <li><strong>二创改动前先问禁止改动项</strong><p>设定表里通常列 10—14 项禁止改动内容，改色、改配件、改比例属于不同授权层级。</p></li>
+        </ol>
+        <div class="card pad" style="margin-top:var(--sp-4)">
+          <h3 style="font-size:15px;color:var(--brand);margin-bottom:var(--sp-3)">授权类型对照</h3>
+          <table class="compare">
+            <thead>
+              <tr><th>项目</th><th>个人非商用</th><th>商用二创</th><th>买断</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>授权期</td><td>长期，随作品下架终止</td><td>常见 1—3 年</td><td>依合同</td></tr>
+              <tr><td>署名</td><td>须注明作者ID</td><td>作者ID + 作品编号</td><td>可协商去掉</td></tr>
+              <tr><td>改色/拆件</td><td>一般不允许</td><td>常见允许改色，拆件须确认</td><td>通常全允许</td></tr>
+              <tr><td>源文件分发</td><td>禁止</td><td>禁止转售</td><td>按合同</td></tr>
+              <tr><td>典型价格区间</td><td>0—80 元</td><td>300—2,000 元</td><td>5,000 元起</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="sec-head">
+          <h2>常见问答</h2>
+          <span class="tag">授权 · 交付 · 版权核对</span>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>作品授权类型里“个人非商用”和“商用二创”差在哪里？</summary>
+            <div class="faq-body">个人非商用只允许个人欣赏、学习临摹与同人非售卖分享；商用二创允许把作品元素用于店铺物料、视频封面等营利场景，但通常要求署名、限制二次转售，平台抽成比例与授权期也不同。买之前先看用途，不然后面改授权要补差价。</div>
+          </details>
+          <details>
+            <summary>角色设定稿交付时通常包含哪几份文件？</summary>
+            <div class="faq-body">标准交付是三视图分层 PSD、透明底 PNG 立绘和一份角色设定表。设定表记录身高比例、主色 hex、服装结构、表情差分与禁止改动项。少数作者会附赠配件拆解层，是否包含以作品详情页的文件清单为准。</div>
+          </details>
+          <details>
+            <summary>发布作品前怎样核对是否有版权风险？</summary>
+            <div class="faq-body">按三步核对：素材来源清单逐项写明字体、笔刷、参考图出处；确认参考图没有被直接描摹；确认作品中不含他人角色、商标与真实人物肖像。缺少任一项记录，建议先补齐再发布。11 月 2 日更新的分类索引里单独设了“版权核对清单”入口。</div>
+          </details>
+          <details>
+            <summary>动态视觉作品的文件体积为什么差别很大？</summary>
+            <div class="faq-body">主要取决于帧率、画布尺寸和编码方式。同一条 6 秒循环，30fps、1080×1080 的 ProRes 文件常在 120MB 以上，转成 H.264 后压缩到 8—15MB，画质差异在暗部渐变处最明显。平台动态区现在同时标注两种格式，选哪种看最终投放渠道。</div>
+          </details>
+          <details>
+            <summary>二创时改了主色，还需要重新申请授权吗？</summary>
+            <div class="faq-body">看授权面板是否把“允许改色”写进主授权。写了就不用，没写就要单独问。@纸间工房 的展陈模板主授权直接写明可改色可换文案，所以 11 月 5 日的改色询问当天就得到肯定答复。</div>
+          </details>
+          <details>
+            <summary>署名写在视频片尾算不算数？</summary>
+            <div class="faq-body">v2.4 版要求署名在画面可见区或视频前 3 秒内，片尾不在允许位置。10 月 5 日之前生成的订单适用旧版，注明作者ID即可，位置不限。核对时以订单生成日期对应的版本号为准。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="section" id="comments">
+        <div class="sec-head">
+          <h2>用户评论</h2>
+          <span class="tag">观点来自使用者 · 未做删改</span>
+        </div>
+        <div class="comments">
+          <div class="comment">
+            <div class="c-head"><span class="avatar">南</span><span class="c-name">@一块姜</span><span>11月7日 21:14</span><span class="badge gray">关联作品 AC-2026-1106-17</span></div>
+            <p>《雾港巡夜人》那套三视图的配件层拆得很干净，帽子、腰带、靴子分开命名，改配色不用重新抠图。就是设定表里禁止改动项有 14 条，想改鞋款得单独问，流程稍长。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">灰</span><span class="c-name">@半页稿纸</span><span>11月7日 15:02</span></div>
+            <p>雨夜街角那张的灰阶分层确实好用，直接能对上自己要的光源方向。不过个人非商用授权下不能拿来当视频封面，这点容易看漏，建议下单前把折叠区点开。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">盐</span><span class="c-name">@罐头厂夜班</span><span>11月6日 23:40</span><span class="badge gray">关联片段 几何循环</span></div>
+            <p>六秒几何循环下下来是 ProRes 母版，我这边剪辑软件版本旧，先转了 H.264 才能用。画质在深蓝渐变的地方掉了一点，做小屏投放看不出，大屏就有点糊。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">纸</span><span class="c-name">@下班画两笔</span><span>11月6日 10:18</span></div>
+            <p>秋季展陈模板的图层命名是我见过最规整的之一，主标题区、副标题区、配图区一眼能认。缺点是花边元素只有两种，换季想多用几种要自己补。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">铁</span><span class="c-name">@螺丝松了</span><span>11月5日 19:55</span></div>
+            <p>机械师那套的护目镜拆解图挺细，连螺丝孔位都标了。但 14 处禁止改动项里有一条是“不得改变机械臂数量”，做同人时想加一只手臂被拒了，当时没注意看。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">七</span><span class="c-name">@十七木的粉</span><span>11月4日 08:31</span></div>
+            <p>窗边夜读那张 300dpi 加出血，直接印橱窗没问题。个人觉得收藏数比同区其他作品高不奇怪，暖色光源的处理确实耐看，细节在书脊和台灯线。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">路</span><span class="c-name">@路过的甲方</span><span>11月3日 16:44</span></div>
+            <p>授权面板移动端折叠层有点深，两次点开才看到附注。内容本身写得清楚，就是入口不显眼，希望后面能默认展开。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">旁</span><span class="c-name">@旁观记录</span><span>11月2日 12:09</span></div>
+            <p>下架那件事两边都留了说明，看着还算平和。真正值得记的是 11 月 1 日作者把附注挪了位置，条款没变只是更显眼，这点比谁对谁错有用。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="section" id="news">
+        <div class="sec-head">
+          <h2>相关资讯</h2>
+          <span class="tag">来源标注 · 含外部报道</span>
+        </div>
+        <ul class="news-list">
+          <li>
+            <strong>插画师版权登记流程在多地线上化，登记周期缩短到 10 个工作日</strong>
+            地方版权服务平台的线上登记通道覆盖插画、角色设定等作品类型，登记时需上传分层源文件截图与创作说明。据 11 月 3 日平台公告，材料齐全的情况下受理后 10 个工作日出证。
+            <span class="src">来源：地方版权服务平台 11月3日公告</span>
+          </li>
+          <li>
+            <strong>动态视觉交付格式争议：客户要 H.264，作者交 ProRes</strong>
+            某动画外包群 11 月 5 日的讨论记录显示，交付格式分歧集中在文件体积与二次剪辑需求。ProRes 母版适合再编辑，H.264 适合直接投放，合同里写清用途能少一轮返工。
+            <span class="src">来源：动画外包从业者群聊记录，11月5日</span>
+          </li>
+          <li>
+            <strong>角色设定表模板更新，新增“禁止改动项”独立栏位</strong>
+            新版设定表把禁止改动项从备注里拆出来单独成栏，便于二创前逐项确认。@铁皮雀 的机械师设定表已按新格式重排，条目从 9 条细化到 14 条。
+            <span class="src">来源：创作者主页更新说明，11月2日</span>
+          </li>
+          <li>
+            <strong>分层 PSD 命名规范讨论：图层超过 30 个后怎么组织</strong>
+            11 月 1 日的一场线上分享里，三位作者给出的方案不同：按部件分组、按前后景分组、按色块分组。共识是分组名要能直接对应设定表的条目。
+            <span class="src">来源：线上分享回放摘要，11月1日</span>
+          </li>
+          <li>
+            <strong>商用二创授权期普遍集中在 1—3 年，长期授权仍靠单独协商</strong>
+            从 10 月内 87 份授权页样本看，商用二创授权期写 1 年的 41 份、2 年 23 份、3 年 15 份，未写期限的 8 份。未写期限的样本里，附注多有一句“以作品在架时间为准”。
+            <span class="src">来源：授权页样本统计，统计日 11月4日</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="section" id="related">
+        <div class="sec-head">
+          <h2>相关推荐</h2>
+          <span class="tag">延伸阅读与检索词</span>
+        </div>
+        <div class="tag-cloud">
+          <a href="/#picks">角色三视图分层源文件</a>
+          <a href="/#picks">表情差分透明底 PNG</a>
+          <a href="/#deep">商用二创授权期怎么算</a>
+          <a href="/#guide">二创禁止改动项清单</a>
+          <a href="/#picks">动态视觉 ProRes 转 H.264</a>
+          <a href="/#picks">海报分层模板 PS 命名规范</a>
+          <a href="/#deep">授权面板附注行效力</a>
+          <a href="/#faq">参考图描摹风险核对</a>
+          <a href="/#picks">单幅插画 300dpi 出血设置</a>
+          <a href="/#rank">创作者交付准时率榜</a>
+        </div>
+      </section>
+
+      <!-- 补充板块：榜单 + 引语/证言 -->
+      <section class="section" id="rank">
+        <div class="sec-head">
+          <h2>创作者口碑榜</h2>
+          <span class="tag">近 90 天完结订单 · 11月8日更新</span>
+        </div>
+        <ol class="rank">
+          <li><span class="no">01</span><div class="r-body"><strong>@纸间工房</strong>模板分层命名规范，改色换文案一次过；返修率 4.2%</div><span class="score">交付 61 单</span></li>
+          <li><span class="no">02</span><div class="r-body"><strong>@南屿绘</strong>三视图与设定表配套齐全，禁止改动项写得细；返修率 6.8%</div><span class="score">交付 48 单</span></li>
+          <li><span class="no">03</span><div class="r-body"><strong>@灯下灰</strong>场景灰阶分层清晰，附注限制较严；返修率 7.5%</div><span class="score">交付 34 单</span></li>
+          <li><span class="no">04</span><div class="r-body"><strong>@十七木</strong>插画 dpi 与出血一次到位，交稿周期偏长；返修率 5.1%</div><span class="score">交付 29 单</span></li>
+          <li><span class="no">05</span><div class="r-body"><strong>@赤盐</strong>动态母版加预览双格式，编码说明完整；返修率 9.3%</div><span class="score">交付 22 单</span></li>
+        </ol>
+        <div class="quote-card" style="margin-top:var(--sp-4)">
+          <blockquote>“我接单最怕的不是改稿，是对方根本没看授权面板。后来我把禁止改动项直接截成第一张图放进作品详情，询问量少了，成交反而快了。”</blockquote>
+          <div class="q-by">—— <b>@铁皮雀</b>，角色设定作者，11月2日主页更新说明中提及</div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 侧栏 -->
+    <aside aria-label="侧栏">
+      <div class="side-card">
+        <h3>快速跳转</h3>
+        <ul class="side-nav" id="sideNav">
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#picks">精选作品推荐</a></li>
+          <li><a href="/#latest">最新更新记录</a></li>
+          <li><a href="/#channels">分类索引</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#rank">创作者口碑榜</a></li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h3>本周热门检索</h3>
+        <div class="tag-cloud">
+          <a href="/#picks">三视图</a>
+          <a href="/#picks">表情差分</a>
+          <a href="/#deep">授权期</a>
+          <a href="/#picks">动态循环</a>
+          <a href="/#guide">禁止改动项</a>
+          <a href="/#faq">署名方式</a>
+        </div>
+      </div>
+      <div class="side-card">
+        <h3>值得留意的数字</h3>
+        <ul class="news-list">
+          <li><strong>87 份授权页样本</strong>商用二创授权期写 1 年的占 47%。<span class="src">统计日 11月4日</span></li>
+          <li><strong>42 组角色三视图</strong>本周新增，17 组含表情差分。<span class="src">11月7日更新</span></li>
+          <li><strong>48 小时</strong>授权争议在证据齐全时的常见处理时长。<span class="src">客服记录区间</span></li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h3>关于示例数据</h3>
+        <p class="muted" style="margin:0;font-size:12.5px">作品名称、作者ID、订单量与授权页样本均为演示内容，用于说明字段结构；引用日期集中在 2026年10月5日至11月8日之间。</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 64 64" role="img" aria-label="艾彩原创网vk 品牌图形">
+            <rect width="64" height="64" rx="14" fill="#1b2a4a"/>
+            <path d="M18 44 L32 16 L46 44 Z" fill="none" stroke="#e8b44a" stroke-width="4" stroke-linejoin="round"/>
+            <circle cx="32" cy="38" r="4" fill="#e8b44a"/>
+          </svg>
+          <b>艾彩原创网vk</b>
+        </div>
+        <p>原创视觉作品的授权信息与交付清单在此归档，按条目、文件层与日期可查。</p>
+      </div>
+      <div>
+        <h4>作品频道</h4>
+        <ul class="footer-links">
+          <li><a href="/#picks">角色三视图</a></li>
+          <li><a href="/#picks">表情差分包</a></li>
+          <li><a href="/#picks">场景概念图</a></li>
+          <li><a href="/#picks">动态视觉循环</a></li>
+          <li><a href="/#picks">海报分层模板</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>规则与指南</h4>
+        <ul class="footer-links">
+          <li><a href="/#deep">授权面板说明</a></li>
+          <li><a href="/#guide">六步交付流程</a></li>
+          <li><a href="/#faq">版权核对清单</a></li>
+          <li><a href="/#latest">版本更新记录</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>社区</h4>
+        <ul class="footer-links">
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#rank">创作者口碑榜</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#related">相关推荐</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-note">
+      <b>示例数据说明：</b>页面内作品名、作者ID、浏览量、收藏数、交付单量与授权页样本统计均为演示内容，用于展示字段与核对结构。资讯条目按来源与日期标注，其中创作者主页更新说明、群聊记录属于转述，非平台官方公告。
+    </div>
+    <div class="copyright">
+      <span>© 2026 艾彩原创网vk 示例页面 · 内容更新于 2026年11月8日</span>
+      <span>字体、笔刷与参考图版权归各自权利人所有</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 公告关闭 */
+  var ann = document.getElementById('announceBar');
+  var annClose = ann ? ann.querySelector('.close') : null;
+  if(annClose){
+    annClose.addEventListener('click', function(){
+      ann.style.display = 'none';
+      document.documentElement.style.setProperty('--stick-h', '64px');
+    });
+  }
+
+  /* 移动端菜单 */
+  var menuBtn = document.getElementById('menuBtn');
+  var mainNav = document.getElementById('mainNav');
+  if(menuBtn && mainNav){
+    menuBtn.addEventListener('click', function(){
+      var open = mainNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mainNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.matchMedia('(max-width:640px)').matches){
+        mainNav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && mainNav.classList.contains('open')){
+        mainNav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.focus();
+      }
+    });
+  }
+
+  /* 本地搜索 */
+  var searchInput = document.getElementById('siteSearch');
+  var resultBox = document.getElementById('searchResult');
+  var index = [];
+  var mm = document.querySelectorAll('main a[href^="/#"], .main-nav a[href^="/#"]');
+  var seen = {};
+  for(var i=0;i<mm.length;i++){
+    var a = mm[i];
+    var txt = (a.textContent || '').replace(/\s+/g,' ').trim();
+    var href = a.getAttribute('href');
+    if(txt && !seen[txt + href]){
+      seen[txt + href] = 1;
+      index.push({text:txt, href:href});
+    }
+  }
+  var extra = ['雾港巡夜人三视图分层稿','雨夜旧城区街角光影方案','六秒几何循环片段','秋季展陈海报分层模板','蒸汽机械师配件拆解表','窗边夜读单幅插画'];
+  extra.forEach(function(t){
+    index.push({text:t, href:'/#picks'});
+  });
+
+  function renderResult(q){
+    if(!resultBox) return;
+    var key = q.trim().toLowerCase();
+    if(!key){
+      resultBox.classList.remove('open');
+      resultBox.innerHTML = '';
+      return;
+    }
+    var hits = index.filter(function(it){
+      return it.text.toLowerCase().indexOf(key) > -1;
+    }).slice(0,8);
+    resultBox.innerHTML = '';
+    if(hits.length === 0){
+      var empty = document.createElement('div');
+      empty.className = 'sr-empty';
+      empty.textContent = '没有找到与「' + q + '」相关的内容，试试“三视图”“授权期”“动态循环”。';
+      resultBox.appendChild(empty);
+    }else{
+      hits.forEach(function(it){
+        var a = document.createElement('a');
+        a.className = 'sr-item';
+        a.href = it.href;
+        a.setAttribute('role','option');
+        a.textContent = it.text;
+        resultBox.appendChild(a);
+      });
+    }
+    resultBox.classList.add('open');
+  }
+
+  if(searchInput){
+    searchInput.addEventListener('input', function(){
+      renderResult(searchInput.value);
+    });
+    searchInput.addEventListener('focus', function(){
+      if(searchInput.value.trim()) renderResult(searchInput.value);
+    });
+    document.addEventListener('click', function(e){
+      if(resultBox && !resultBox.contains(e.target) && e.target !== searchInput){
+        resultBox.classList.remove('open');
+      }
+    });
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        resultBox.classList.remove('open');
+        searchInput.blur();
+      }
+    });
+  }
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  function onScroll(){
+    if(!toTop) return;
+    if(window.scrollY > 420){
+      toTop.classList.add('show');
+    }else{
+      toTop.classList.remove('show');
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  if(toTop){
+    toTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  /* 侧栏滚动高亮 */
+  var sideLinks = document.querySelectorAll('#sideNav a');
+  var sections = [];
+  sideLinks.forEach(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    var el = document.getElementById(id);
+    if(el) sections.push({id:id, el:el, link:a});
+  });
+  function highlight(){
+    var pos = window.scrollY + 160;
+    var current = null;
+    sections.forEach(function(s){
+      if(s.el.offsetTop <= pos) current = s;
+    });
+    sideLinks.forEach(function(a){ a.classList.remove('active'); });
+    if(current) current.link.classList.add('active');
+  }
+  window.addEventListener('scroll', highlight, {passive:true});
+  highlight();
+
+  /* 平滑锚点（为吸顶预留偏移） */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href^="/#"]') : null;
+    if(!a) return;
+    var id = a.getAttribute('href').slice(2);
+    if(!id) return;
+    var target = document.getElementById(id);
+    if(!target) return;
+    e.preventDefault();
+    var offset = 116;
+    var stick = document.querySelector('.stick-wrap');
+    if(stick && getComputedStyle(stick).position === 'sticky'){
+      offset = stick.offsetHeight + 12;
+    }
+    var y = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({top: Math.max(y,0), behavior:'smooth'});
+    history.replaceState(null, '', '/#' + id);
+    if(window.matchMedia('(max-width:640px)').matches && mainNav){
+      mainNav.classList.remove('open');
+      if(menuBtn) menuBtn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+</body>
+  </html>
