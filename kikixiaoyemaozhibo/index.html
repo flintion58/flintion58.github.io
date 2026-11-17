@@ -1,0 +1,1017 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kiki小野猫直播回放-回放整理与看点速查</title>
+<meta name="description" content="kiki小野猫直播回放按场次归档，标注时间码、名场面、连麦与游戏局节点，附弹幕热词、画质与时长对照，方便按类型检索想看的一段，并给出检索与收听建议。">
+<meta name="keywords" content="kiki小野猫直播回放">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23241a2e'/%3E%3Cpath d='M14 44c6-10 10-18 18-18s12 8 18 18' fill='none' stroke='%23f7b1c4' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='26' cy='30' r='3' fill='%23ffe08a'/%3E%3Ccircle cx='40' cy='30' r='3' fill='%23ffe08a'/%3E%3Cpath d='M28 42h8' stroke='%23f7b1c4' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"kiki小野猫直播回放","inLanguage":"zh-CN","description":"按场次整理主播kiki小野猫的直播回放，标注时间码、名场面与观看看点。"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"直播回放和直播录像完整版有什么区别？","acceptedAnswer":{"@type":"Answer","text":"完整版保留开场寒暄、等待连麦和分段休息，时长常在3小时以上；回放整理版按看点切段，通常保留唱歌、连麦、游戏局三类节点，删去设备调试和闲聊等待。"}},
+{"@type":"Question","name":"回放里的时间码怎么用？","acceptedAnswer":{"@type":"Answer","text":"时间码按直播开播计时，00:42:10表示开播后42分10秒。播放器进度条与直播时长对齐，拖动到对应位置即可，部分分段上传稿需要叠加分段起点。"}},
+{"@type":"Question","name":"为什么有的场次只有竖屏片段？","acceptedAnswer":{"@type":"Answer","text":"竖屏片段来自直播间切片账号的二次剪辑，原始横屏录制未公开时不提供全片。切片常保留30秒到2分钟，适合看反应，不适合听完整歌曲。"}},
+{"@type":"Question","name":"唱歌场的伴奏音轨和原唱怎么区分？","acceptedAnswer":{"@type":"Answer","text":"直播间使用的伴奏多为消音版，人声轨单薄；若听到和声叠加且咬字与主播音色不符，通常是原唱轨未关。回放条目会在备注里标注“原唱轨”或“纯伴奏”。"}},
+{"@type":"Question","name":"连麦局的嘉宾名单在哪里核对？","acceptedAnswer":{"@type":"Answer","text":"回放条目的嘉宾栏按直播间挂麦顺序记录，含昵称和入场分钟。昵称以连麦时显示为准，改过名的账号会在括号里写旧昵称。"}},
+{"@type":"Question","name":"游戏局回放适合从哪一段看起？","acceptedAnswer":{"@type":"Answer","text":"从第一次组队开始的分钟数看起，避开单排热身。组队段落通常有明确的口令和分工，能看懂后续为什么翻盘或失误。"}}
+]}
+</script>
+<style>
+:root{
+  --bg:#120e18;
+  --bg-soft:#1a1422;
+  --panel:#211a2b;
+  --panel-2:#2a2136;
+  --line:#3a2f4a;
+  --text:#efe9f5;
+  --text-2:#b9aec8;
+  --text-3:#8b7f9c;
+  --primary:#f7b1c4;
+  --primary-deep:#e98aa8;
+  --accent:#ffe08a;
+  --accent-2:#8fd6c0;
+  --radius:14px;
+  --radius-s:8px;
+  --shadow:0 10px 28px rgba(0,0,0,.35);
+  --sp-1:6px;--sp-2:10px;--sp-3:16px;--sp-4:24px;--sp-5:36px;--sp-6:56px;
+  --fs-xs:12px;--fs-s:13.5px;--fs-b:15px;--fs-m:17px;--fs-l:21px;--fs-xl:28px;--fs-2xl:40px;
+  --ann-h:38px;
+  --head-h:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--ann-h) + var(--head-h) + 12px)}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  font-size:var(--fs-b);line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--primary);text-decoration:none}
+a:hover{color:var(--accent)}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 var(--sp-3)}
+ul,ol{margin:0 0 var(--sp-3);padding-left:1.25em}
+li{margin-bottom:6px}
+button{font-family:inherit}
+
+/* 吸顶公告条 + 页头 */
+.sticky-wrap{position:sticky;top:0;z-index:50}
+.announce{
+  height:var(--ann-h);display:flex;align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(90deg,#3a2140,#2a1b33 60%,#22172a);
+  border-bottom:1px solid var(--line);
+  font-size:var(--fs-xs);color:var(--text-2);
+  padding:0 14px;overflow:hidden;white-space:nowrap;
+}
+.announce .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-2);flex:none;box-shadow:0 0 0 3px rgba(143,214,192,.15)}
+.announce strong{color:var(--accent);font-weight:600}
+.announce a{color:var(--primary);flex:none}
+.site-head{
+  height:var(--head-h);display:flex;align-items:center;gap:18px;
+  padding:0 20px;background:rgba(24,18,32,.94);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand svg{width:34px;height:34px;flex:none}
+.brand .brand-text{font-size:var(--fs-m);font-weight:700;letter-spacing:.3px;color:var(--text);white-space:nowrap}
+.brand .brand-text em{font-style:normal;color:var(--primary)}
+.main-nav{display:flex;gap:2px;flex-wrap:wrap;align-items:center}
+.main-nav a{
+  padding:7px 10px;border-radius:var(--radius-s);font-size:var(--fs-s);color:var(--text-2);
+  transition:background .18s,color .18s;white-space:nowrap;
+}
+.main-nav a:hover,.main-nav a:focus-visible{background:var(--panel-2);color:var(--text)}
+.head-tools{margin-left:auto;display:flex;align-items:center;gap:10px}
+.search-box{display:flex;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px 6px 4px 12px}
+.search-box input{
+  background:none;border:0;color:var(--text);font-size:var(--fs-s);width:150px;outline:none;
+}
+.search-box input::placeholder{color:var(--text-3)}
+.search-box button{
+  background:var(--primary);color:#221025;border:0;border-radius:999px;padding:4px 12px;font-size:var(--fs-xs);font-weight:700;cursor:pointer;
+}
+.search-box button:hover{background:var(--accent)}
+.search-result{
+  position:absolute;top:calc(var(--ann-h) + var(--head-h) + 6px);right:20px;width:300px;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:10px;font-size:var(--fs-s);display:none;
+}
+.search-result.show{display:block}
+.search-result .r-item{padding:6px 8px;border-radius:6px;color:var(--text-2)}
+.search-result .r-item:hover{background:var(--panel-2);color:var(--text)}
+.search-result .r-empty{color:var(--text-3);padding:6px 8px}
+.menu-btn{
+  display:none;background:var(--panel);border:1px solid var(--line);color:var(--text-2);
+  border-radius:var(--radius-s);padding:6px 10px;font-size:var(--fs-s);cursor:pointer;
+}
+.menu-btn:focus-visible,.search-box button:focus-visible,.search-box input:focus-visible,
+.main-nav a:focus-visible,.back-top:focus-visible,summary:focus-visible{
+  outline:2px solid var(--accent-2);outline-offset:2px;
+}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;
+  padding:var(--sp-6) 20px var(--sp-5);
+  background:
+    radial-gradient(900px 420px at 82% -10%,rgba(247,177,196,.20),transparent 60%),
+    radial-gradient(620px 380px at 6% 100%,rgba(143,214,192,.14),transparent 62%),
+    linear-gradient(180deg,#181121,#120e18 78%);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:var(--fs-xs);color:var(--accent-2);
+  border:1px solid rgba(143,214,192,.35);background:rgba(143,214,192,.08);
+  padding:4px 12px;border-radius:999px;margin-bottom:var(--sp-3);letter-spacing:.5px;
+}
+.hero h1{font-size:var(--fs-2xl);letter-spacing:.5px;margin-bottom:var(--sp-3)}
+.hero h1 span{color:var(--primary)}
+.hero .lede{color:var(--text-2);font-size:var(--fs-m);max-width:34em;margin-bottom:var(--sp-4)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:var(--sp-4)}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;
+  font-size:var(--fs-s);font-weight:600;border:1px solid transparent;transition:transform .18s,background .18s;
+}
+.btn-primary{background:var(--primary);color:#241024}
+.btn-primary:hover{background:var(--accent);color:#241024;transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line);color:var(--text-2);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:26px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:var(--sp-3)}
+.hero-stats div{font-size:var(--fs-xs);color:var(--text-3)}
+.hero-stats b{display:block;font-size:var(--fs-l);color:var(--text);font-weight:700}
+.hero-visual{position:relative;min-height:310px}
+.hero-visual .frame{
+  position:absolute;inset:0;border-radius:22px;border:1px solid var(--line);
+  background:linear-gradient(160deg,#2b2038,#1a1422 70%);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.hero-visual .frame svg{width:100%;height:100%}
+.hero-visual .badge{
+  position:absolute;left:16px;bottom:16px;background:rgba(18,14,24,.82);border:1px solid var(--line);
+  border-radius:10px;padding:8px 12px;font-size:var(--fs-xs);color:var(--text-2);
+}
+.hero-visual .badge b{color:var(--accent);font-weight:700}
+.hero-visual .tag-float{
+  position:absolute;right:-8px;top:22px;background:var(--primary);color:#241024;
+  font-size:var(--fs-xs);font-weight:700;padding:5px 12px;border-radius:8px;transform:rotate(3deg);
+}
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:28px}
+  .hero-visual{min-height:230px;order:2}
+}
+
+/* 布局 */
+.layout{max-width:1160px;margin:0 auto;padding:var(--sp-5) 20px 0;display:grid;grid-template-columns:1fr 300px;gap:36px;align-items:start}
+.content-col{min-width:0}
+.side-col{position:sticky;top:calc(var(--ann-h) + var(--head-h) + 16px)}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  .side-col{position:static;order:2}
+}
+
+/* 通用板块 */
+.section{margin-bottom:var(--sp-6);scroll-margin-top:calc(var(--ann-h) + var(--head-h) + 14px)}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:var(--sp-3);flex-wrap:wrap}
+.sec-head h2{font-size:var(--fs-l);letter-spacing:.3px}
+.sec-head h2::before{content:"";display:inline-block;width:5px;height:16px;background:var(--primary);border-radius:3px;margin-right:9px;vertical-align:-2px}
+.sec-head .sec-note{font-size:var(--fs-xs);color:var(--text-3)}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--sp-3);transition:border-color .18s,transform .18s;
+}
+.card:hover{border-color:#55456b;transform:translateY(-2px)}
+.muted{color:var(--text-2);font-size:var(--fs-s)}
+.tiny{font-size:var(--fs-xs);color:var(--text-3)}
+.chip{
+  display:inline-block;font-size:var(--fs-xs);padding:3px 9px;border-radius:999px;
+  background:rgba(247,177,196,.12);color:var(--primary);border:1px solid rgba(247,177,196,.28);margin:0 6px 6px 0;
+}
+.chip.green{background:rgba(143,214,192,.10);color:var(--accent-2);border-color:rgba(143,214,192,.3)}
+.chip.gold{background:rgba(255,224,138,.10);color:var(--accent);border-color:rgba(255,224,138,.3)}
+.tag-index{display:flex;flex-wrap:wrap;gap:8px}
+.tag-index a{
+  font-size:var(--fs-s);padding:6px 12px;border-radius:999px;background:var(--panel);
+  border:1px solid var(--line);color:var(--text-2);
+}
+.tag-index a:hover{border-color:var(--primary);color:var(--primary)}
+
+/* 板块1 概览：三格信息 */
+.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.overview-grid .ov{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-3)}
+.overview-grid .ov h3{font-size:var(--fs-b);margin-bottom:8px;color:var(--accent)}
+.overview-grid .ov p{margin:0;font-size:var(--fs-s);color:var(--text-2)}
+@media (max-width:720px){.overview-grid{grid-template-columns:1fr}}
+
+/* 板块2 精选：网格卡片 */
+.pick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.pick-card{overflow:hidden;padding:0}
+.pick-card img{width:100%;height:158px;object-fit:cover;border-bottom:1px solid var(--line)}
+.pick-card .pc-body{padding:var(--sp-3)}
+.pick-card h3{font-size:var(--fs-m);margin-bottom:6px}
+.pick-card h3 a{color:var(--text)}
+.pick-card h3 a:hover{color:var(--primary)}
+.pick-card .pc-meta{font-size:var(--fs-xs);color:var(--text-3);margin-bottom:8px}
+.pick-card p{font-size:var(--fs-s);color:var(--text-2);margin:0}
+@media (max-width:720px){.pick-grid{grid-template-columns:1fr}}
+
+/* 板块3 最新更新：紧凑列表 */
+.upd-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.upd-list li{display:grid;grid-template-columns:88px 1fr auto;gap:14px;align-items:baseline;padding:12px 2px;border-bottom:1px solid var(--line);margin:0}
+.upd-list .u-time{font-size:var(--fs-xs);color:var(--accent-2);font-variant-numeric:tabular-nums}
+.upd-list .u-title{font-size:var(--fs-s);color:var(--text)}
+.upd-list .u-title small{display:block;color:var(--text-3);font-size:var(--fs-xs);margin-top:2px}
+.upd-list .u-tag{font-size:var(--fs-xs);color:var(--text-3);white-space:nowrap}
+@media (max-width:560px){.upd-list li{grid-template-columns:70px 1fr;gap:8px}.upd-list .u-tag{grid-column:2;color:var(--text-3)}}
+
+/* 板块4 分类：标签索引 + 双列 */
+.cat-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.cat-panel{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-3)}
+.cat-panel h3{font-size:var(--fs-b);margin-bottom:10px;color:var(--accent)}
+.cat-list{list-style:none;padding:0;margin:0;font-size:var(--fs-s)}
+.cat-list li{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line);color:var(--text-2)}
+.cat-list li:last-child{border-bottom:0}
+.cat-list b{color:var(--text);font-weight:600}
+.cat-list span{color:var(--text-3);font-size:var(--fs-xs)}
+@media (max-width:720px){.cat-wrap{grid-template-columns:1fr}}
+
+/* 板块5 深度解析：分栏正文 */
+.deep{background:linear-gradient(170deg,#1e1729,#191320);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-4)}
+.deep h2{font-size:var(--fs-l);margin-bottom:var(--sp-2)}
+.deep h3{font-size:var(--fs-m);margin:var(--sp-4) 0 var(--sp-2);color:var(--accent);padding-left:10px;border-left:3px solid var(--primary)}
+.deep p{color:var(--text-2);font-size:var(--fs-b)}
+.deep p strong{color:var(--text)}
+.deep .cols{columns:2;column-gap:34px}
+@media (max-width:760px){.deep .cols{columns:1}}
+.deep .quote{
+  border-left:3px solid var(--accent-2);background:rgba(143,214,192,.06);
+  padding:10px 14px;border-radius:0 var(--radius-s) var(--radius-s) 0;color:var(--text-2);font-size:var(--fs-s);margin:var(--sp-3) 0;
+}
+.check-table{width:100%;border-collapse:collapse;font-size:var(--fs-s);margin:var(--sp-2) 0 var(--sp-3)}
+.check-table th,.check-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.check-table th{background:var(--panel-2);color:var(--accent);font-weight:600}
+.check-table td{color:var(--text-2)}
+
+/* 板块6 体验指南：编号步骤 */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.steps li{
+  counter-increment:s;position:relative;padding:12px 14px 12px 54px;
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+  font-size:var(--fs-s);color:var(--text-2);
+}
+.steps li::before{
+  content:counter(s);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;background:var(--primary);color:#241024;font-weight:700;font-size:var(--fs-s);
+}
+.steps li b{color:var(--text)}
+
+/* 板块7 FAQ */
+details{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-s);padding:0;margin-bottom:10px;overflow:hidden}
+details[open]{border-color:#51415f}
+summary{
+  cursor:pointer;padding:12px 16px;font-size:var(--fs-s);color:var(--text);list-style:none;position:relative;padding-right:40px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--primary);font-size:18px;line-height:1}
+details[open] summary::after{content:"−"}
+details .faq-body{padding:0 16px 14px;font-size:var(--fs-s);color:var(--text-2)}
+
+/* 板块8 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cmt{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-3)}
+.cmt .cmt-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:var(--fs-xs);color:var(--text-3)}
+.cmt .avatar{width:24px;height:24px;border-radius:50%;background:linear-gradient(130deg,var(--primary),var(--accent-2));flex:none}
+.cmt .cmt-name{color:var(--text-2);font-weight:600}
+.cmt p{margin:0;font-size:var(--fs-s);color:var(--text-2)}
+.cmt .quote-line{color:var(--text);border-bottom:1px dashed var(--line);padding-bottom:1px}
+@media (max-width:720px){.comments{grid-template-columns:1fr}}
+
+/* 板块9 资讯 */
+.news-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.news-list li{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-s);padding:12px 14px;font-size:var(--fs-s);color:var(--text-2)}
+.news-list b{color:var(--text)}
+.news-list time{color:var(--accent-2);font-size:var(--fs-xs);margin-right:8px;font-variant-numeric:tabular-nums}
+
+/* 板块10 相关推荐：标签 + 引语卡 */
+.rec-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.quote-card{
+  background:linear-gradient(160deg,rgba(247,177,196,.10),rgba(143,214,192,.06));
+  border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-4);position:relative;
+}
+.quote-card::before{content:"“";position:absolute;left:14px;top:2px;font-size:44px;color:rgba(247,177,196,.35);font-family:Georgia,serif;line-height:1}
+.quote-card p{font-size:var(--fs-m);color:var(--text);margin:0 0 10px;padding-left:12px}
+.quote-card .who{font-size:var(--fs-xs);color:var(--text-3)}
+@media (max-width:720px){.rec-wrap{grid-template-columns:1fr}}
+
+/* 板块11 榜单时间线 */
+.rank-list{list-style:none;padding:0;margin:0;counter-reset:r}
+.rank-list li{counter-increment:r;display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:var(--radius-s);background:var(--bg-soft);border:1px solid var(--line);margin-bottom:8px;font-size:var(--fs-s)}
+.rank-list li::before{content:counter(r);width:26px;height:26px;border-radius:8px;background:var(--panel-2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:var(--fs-s)}
+.rank-list .r-name{color:var(--text)}
+.rank-list .r-name small{display:block;color:var(--text-3);font-size:var(--fs-xs)}
+.rank-list .r-val{color:var(--primary);font-size:var(--fs-xs);font-variant-numeric:tabular-nums;white-space:nowrap}
+.timeline{list-style:none;padding:0 0 0 18px;margin:0;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 16px 14px;font-size:var(--fs-s);color:var(--text-2)}
+.timeline li::before{content:"";position:absolute;left:-24px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--primary);border:2px solid var(--bg)}
+.timeline b{color:var(--text);display:block}
+.timeline time{color:var(--accent-2);font-size:var(--fs-xs);font-variant-numeric:tabular-nums}
+
+/* 侧栏 */
+.side-block{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-3);margin-bottom:16px}
+.side-block h3{font-size:var(--fs-s);color:var(--accent);margin-bottom:10px;letter-spacing:.4px}
+.side-nav a{display:block;padding:6px 10px;border-radius:6px;font-size:var(--fs-s);color:var(--text-2);border-left:2px solid transparent}
+.side-nav a:hover{background:var(--panel-2);color:var(--text)}
+.side-nav a.active{background:rgba(247,177,196,.10);color:var(--primary);border-left-color:var(--primary)}
+.side-tags{display:flex;flex-wrap:wrap;gap:6px}
+.side-tags a{font-size:var(--fs-xs);padding:4px 9px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--line);color:var(--text-2)}
+.side-tags a:hover{color:var(--primary);border-color:var(--primary)}
+.side-stat{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:var(--fs-xs);color:var(--text-3)}
+.side-stat b{display:block;font-size:var(--fs-m);color:var(--text);font-variant-numeric:tabular-nums}
+
+/* 页脚 */
+.site-foot{background:#0e0b13;border-top:1px solid var(--line);margin-top:var(--sp-6);padding:var(--sp-6) 20px var(--sp-4)}
+.foot-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+.foot-brand .brand{margin-bottom:12px}
+.foot-brand p{font-size:var(--fs-s);color:var(--text-2);margin:0 0 8px}
+.foot-col h4{font-size:var(--fs-s);color:var(--text);margin-bottom:10px}
+.foot-col a{display:block;font-size:var(--fs-xs);color:var(--text-3);padding:3px 0}
+.foot-col a:hover{color:var(--primary)}
+.foot-bottom{max-width:1160px;margin:var(--sp-4) auto 0;padding-top:var(--sp-3);border-top:1px solid var(--line);font-size:var(--fs-xs);color:var(--text-3);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media (max-width:820px){.foot-inner{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.foot-inner{grid-template-columns:1fr}}
+
+/* 回到顶部 */
+.back-top{
+  position:fixed;right:18px;bottom:22px;z-index:40;width:42px;height:42px;border-radius:50%;
+  background:var(--panel);border:1px solid var(--line);color:var(--primary);font-size:18px;
+  display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow);
+}
+.back-top.show{display:flex}
+.back-top:hover{border-color:var(--primary)}
+
+/* 响应：移动菜单 */
+@media (max-width:900px){
+  .menu-btn{display:inline-flex}
+  .head-tools .search-box input{width:100px}
+  .main-nav{
+    display:none;position:absolute;left:0;right:0;top:calc(var(--ann-h) + var(--head-h));
+    background:var(--panel);border-bottom:1px solid var(--line);padding:10px 14px;flex-direction:column;gap:2px;box-shadow:var(--shadow);
+  }
+  .main-nav.open{display:flex}
+  .main-nav a{width:100%;padding:9px 10px}
+  .announce{justify-content:flex-start;font-size:11px}
+  .site-head{padding:0 14px;gap:10px}
+  .search-result{right:10px;left:10px;width:auto}
+  .hero h1{font-size:31px}
+  .hero{padding-top:var(--sp-5)}
+}
+@media (max-width:360px){
+  .site-head{gap:6px;padding:0 10px}
+  .brand .brand-text{font-size:15px}
+  .menu-btn{padding:6px 8px}
+  .search-box{display:none}
+  .hero h1{font-size:27px}
+  .hero-stats{gap:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .card:hover,.btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-wrap">
+  <div class="announce" role="note">
+    <span class="dot" aria-hidden="true"></span>
+    <span><strong>kiki小野猫直播回放</strong> 11月6日唱歌场已归档，含《小半》与连麦合唱两段 · 11月7日游戏局补传</span>
+    <a href="/#latest">看更新</a>
+  </div>
+  <header class="site-head">
+    <a class="brand" href="/#top" aria-label="kiki小野猫直播回放首页">
+      <svg viewBox="0 0 64 64" role="img" aria-label="猫耳播放键图形标志">
+        <rect width="64" height="64" rx="14" fill="#241a2e"/>
+        <path d="M14 44c6-10 10-18 18-18s12 8 18 18" fill="none" stroke="#f7b1c4" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="26" cy="30" r="3" fill="#ffe08a"/>
+        <circle cx="40" cy="30" r="3" fill="#ffe08a"/>
+        <path d="M28 42h8" stroke="#f7b1c4" stroke-width="3" stroke-linecap="round"/>
+        <path d="M8 16l10-6v12z" fill="#8fd6c0" opacity=".85"/>
+      </svg>
+      <span class="brand-text">kiki小野猫<em>直播回放</em></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">栏目 ▾</button>
+    <nav class="main-nav" id="mainNav" aria-label="主题导航">
+      <a href="/#overview">回放总览</a>
+      <a href="/#picks">名场面精选</a>
+      <a href="/#latest">更新记录</a>
+      <a href="/#cats">分类入口</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">观看指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">听友评论</a>
+      <a href="/#rank">场次榜单</a>
+    </nav>
+    <div class="head-tools">
+      <div class="search-box">
+        <input type="search" id="searchInput" placeholder="搜场次 / 歌曲 / 嘉宾" aria-label="在本页查找回放条目">
+        <button type="button" id="searchBtn">查找</button>
+      </div>
+    </div>
+  </header>
+  <div class="search-result" id="searchResult" role="status" aria-live="polite"></div>
+</div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">按场次归档 · 时间码可对照 · 每周整理</span>
+        <h1 id="heroTitle"><span>kiki小野猫</span>直播回放</h1>
+        <p class="lede">把一场三小时的直播拆成能直接跳过去看的段落：哪一分钟开唱、哪一段连麦翻车、游戏局从第几局开始有配合。2026年10月10日到11月8日的场次已按唱歌、连麦、游戏三类整理，标了时长、画质和曲目。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#picks">先看名场面精选</a>
+          <a class="btn btn-ghost" href="/#latest">查11月更新</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>37</b>场已归档</div>
+          <div><b>214</b>条时间码</div>
+          <div><b>96</b>首曲目记录</div>
+          <div><b>6</b>类画质标注</div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="frame">
+          <svg viewBox="0 0 420 310" preserveAspectRatio="xMidYMid slice" role="img" aria-label="直播回放界面示意图">
+            <rect width="420" height="310" fill="#1b1426"/>
+            <circle cx="330" cy="60" r="120" fill="#f7b1c4" opacity=".07"/>
+            <circle cx="70" cy="250" r="130" fill="#8fd6c0" opacity=".06"/>
+            <rect x="30" y="30" width="360" height="190" rx="14" fill="#241a2e" stroke="#3a2f4a"/>
+            <path d="M176 96l54 31-54 31z" fill="#f7b1c4"/>
+            <rect x="30" y="236" width="360" height="8" rx="4" fill="#3a2f4a"/>
+            <rect x="30" y="236" width="228" height="8" rx="4" fill="#f7b1c4"/>
+            <circle cx="258" cy="240" r="7" fill="#ffe08a"/>
+            <text x="42" y="212" fill="#b9aec8" font-size="13" font-family="monospace">01:42:18 / 03:06:55</text>
+            <rect x="290" y="196" width="84" height="24" rx="6" fill="#2a2136"/>
+            <text x="302" y="213" fill="#8fd6c0" font-size="12">1080P</text>
+            <g opacity=".8">
+              <rect x="30" y="258" width="110" height="26" rx="6" fill="#2a2136"/>
+              <text x="42" y="276" fill="#b9aec8" font-size="12">唱歌 14段</text>
+              <rect x="150" y="258" width="110" height="26" rx="6" fill="#2a2136"/>
+              <text x="162" y="276" fill="#b9aec8" font-size="12">连麦 9段</text>
+              <rect x="270" y="258" width="120" height="26" rx="6" fill="#2a2136"/>
+              <text x="282" y="276" fill="#b9aec8" font-size="12">游戏局 11段</text>
+            </g>
+          </svg>
+        </div>
+        <div class="tag-float">今日补档</div>
+        <div class="badge">11月6日场 · 原画 <b>1080P</b> · 全长 <b>3小时07分</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout">
+
+    <div class="content-col">
+
+      <!-- 板块1 领域概览 -->
+      <section class="section" id="overview">
+        <div class="sec-head">
+          <h2>回放总览：一场直播能拆成几层</h2>
+          <span class="sec-note">截至11月8日，37场</span>
+        </div>
+        <div class="overview-grid">
+          <div class="ov">
+            <h3>唱歌场</h3>
+            <p>占比最高，单场常唱14到22首。曲目以华语流行和老歌翻唱为主，《小半》《走马》《慢冷》出现频率靠前。伴奏多为消音版，部分段落保留原唱轨，条目里单独标注。</p>
+          </div>
+          <div class="ov">
+            <h3>连麦局</h3>
+            <p>每晚十点后开麦，嘉宾按挂麦顺序记录。常见的是四人局和双人局，话题从点歌转到近况。入场分钟数和昵称都写进嘉宾栏，改名账号加括号写旧名。</p>
+          </div>
+          <div class="ov">
+            <h3>游戏局</h3>
+            <p>以组队排位和派对玩法为主。回放从第一次组队算起点，单排热身会剪掉。团战段的报点和分工比结果更值得回看，翻盘局集中在后半段。</p>
+          </div>
+        </div>
+        <p class="tiny" style="margin-top:12px">时长、画质、曲目三列是核对回放的基础信息；缺项条目会在备注里说明来源是切片账号或观众录屏。</p>
+      </section>
+
+      <!-- 板块2 精选推荐 -->
+      <section class="section" id="picks">
+        <div class="sec-head">
+          <h2>名场面精选：五段值得先看的回放</h2>
+          <span class="sec-note">按可看性挑选，非完整场次</span>
+        </div>
+        <div class="pick-grid">
+          <article class="card pick-card">
+            <img src="https://picsum.photos/seed/kiki-sing-xiaoban/640/320" width="640" height="320" loading="lazy" alt="直播间唱歌场灯光下的麦克风与歌单界面示意">
+            <div class="pc-body">
+              <h3><a href="/#deep">《小半》升半音版 · 11月6日 01:12:40</a></h3>
+              <div class="pc-meta">唱歌场 · 4分12秒 · 1080P</div>
+              <p>比原调高半音，副歌换气位置前移，第二段主歌有一处抢拍。同场此曲唱了两遍，第二遍更稳。</p>
+            </div>
+          </article>
+          <article class="card pick-card">
+            <img src="https://picsum.photos/seed/kiki-lianmai-four/640/320" width="640" height="320" loading="lazy" alt="四人连麦界面分屏与挂麦顺序示意图">
+            <div class="pc-body">
+              <h3><a href="/#comments">四人连麦抢麦 · 11月3日 02:05:10</a></h3>
+              <div class="pc-meta">连麦局 · 18分33秒 · 原画</div>
+              <p>挂麦顺序临时调整，两位嘉宾同时开口，冷场约27秒后被一首清唱接住，成为当晚弹幕最密的一段。</p>
+            </div>
+          </article>
+          <article class="card pick-card">
+            <img src="https://picsum.photos/seed/kiki-game-double/640/320" width="640" height="320" loading="lazy" alt="双人组队游戏界面与报点记录示意">
+            <div class="pc-body">
+              <h3><a href="/#rank">组队翻盘局 · 10月28日 00:58:20</a></h3>
+              <div class="pc-meta">游戏局 · 26分04秒 · 720P</div>
+              <p>前两局连败后换位，第三局靠报点反打。录制帧率偏低，但语音清楚，适合当沟通范例看。</p>
+            </div>
+          </article>
+          <article class="card pick-card">
+            <img src="https://picsum.photos/seed/kiki-answer-fan/640/320" width="640" height="320" loading="lazy" alt="弹幕提问与主播对话界面示意">
+            <div class="pc-body">
+              <h3><a href="/#faq">回答弹幕提问合集 · 10月22日 01:30:05</a></h3>
+              <div class="pc-meta">闲聊段 · 12分47秒 · 1080P</div>
+              <p>集中回应了回放更新频率、伴奏来源和连麦门槛三类问题，是理解整档直播节奏最省时间的一段。</p>
+            </div>
+          </article>
+          <article class="card pick-card">
+            <img src="https://picsum.photos/seed/kiki-medley-live/640/320" width="640" height="320" loading="lazy" alt="串烧歌单与倒计时板示意">
+            <div class="pc-body">
+              <h3><a href="/#latest">老歌串烧二十首 · 10月15日 02:40:12</a></h3>
+              <div class="pc-meta">唱歌场 · 41分19秒 · 1080P</div>
+              <p>从1990年代情歌接到2010年代选秀曲，每首只唱副歌。第11首到第14首是连唱不换气，音准波动明显。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 板块3 最新更新 -->
+      <section class="section" id="latest">
+        <div class="sec-head">
+          <h2>更新记录：最近补档与修订</h2>
+          <span class="sec-note">列表为可核对条目</span>
+        </div>
+        <ul class="upd-list">
+          <li>
+            <span class="u-time">11-07</span>
+            <span class="u-title">游戏局补传两段<small>11月5日场 01:20:00 起组队段、02:05:30 起决胜局；原录制缺失前12分钟</small></span>
+            <span class="u-tag">视频补档</span>
+          </li>
+          <li>
+            <span class="u-time">11-06</span>
+            <span class="u-title">唱歌场曲目表修订第4项<small>《慢冷》实际为降半调伴奏，原标注“原调”改为“降半调”，时间码不变</small></span>
+            <span class="u-tag">标注更正</span>
+          </li>
+          <li>
+            <span class="u-time">11-04</span>
+            <span class="u-title">连麦嘉宾名补全<small>11月2日场挂麦第三人改过昵称，条目括号内补旧名</small></span>
+            <span class="u-tag">信息补齐</span>
+          </li>
+          <li>
+            <span class="u-time">10-31</span>
+            <span class="u-title">新增画质标注列<small>区分原画、1080P、720P与切片画质，观众录屏单独标“录屏”</small></span>
+            <span class="u-tag">结构更新</span>
+          </li>
+          <li>
+            <span class="u-time">10-26</span>
+            <span class="u-title">删除重复条目3条<small>同一场次由两个切片账号上传的内容被合并，保留时长更长的一条</small></span>
+            <span class="u-tag">去重</span>
+          </li>
+          <li>
+            <span class="u-time">10-18</span>
+            <span class="u-title">串烧曲目逐首拆分<small>10月15日老歌串烧41分19秒，拆成20个可跳转时间码</small></span>
+            <span class="u-tag">时间码</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 板块4 分类入口 -->
+      <section class="section" id="cats">
+        <div class="sec-head">
+          <h2>分类入口：按内容类型找场次</h2>
+          <span class="sec-note">10个频道</span>
+        </div>
+        <div class="tag-index" style="margin-bottom:16px">
+          <a href="/#latest">唱歌场回放</a>
+          <a href="/#latest">连麦局回放</a>
+          <a href="/#latest">游戏局回放</a>
+          <a href="/#picks">名场面切片</a>
+          <a href="/#deep">老歌串烧场</a>
+          <a href="/#guide">高音段落合集</a>
+          <a href="/#comments">清唱片段</a>
+          <a href="/#faq">伴奏版本对照</a>
+          <a href="/#rank">整场时长排序</a>
+          <a href="/#overview">画质批次说明</a>
+        </div>
+        <div class="cat-wrap">
+          <div class="cat-panel">
+            <h3>按场次类型</h3>
+            <ul class="cat-list">
+              <li><span><b>纯唱歌场</b></span><span>18 场</span></li>
+              <li><span><b>唱歌 + 连麦混合场</b></span><span>9 场</span></li>
+              <li><span><b>连麦为主场</b></span><span>6 场</span></li>
+              <li><span><b>游戏局专场</b></span><span>4 场</span></li>
+            </ul>
+          </div>
+          <div class="cat-panel">
+            <h3>按可看形式</h3>
+            <ul class="cat-list">
+              <li><span><b>完整场次回放</b></span><span>21 条</span></li>
+              <li><span><b>观众录屏补档</b></span><span>7 条</span></li>
+              <li><span><b>切片账号二剪</b></span><span>9 条</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块5 深度解析 -->
+      <section class="section deep" id="deep">
+        <h2>深度解析：回放观看价值不在“全”，在节点准</h2>
+        <div class="cols">
+          <p>把一场三个多小时的直播从头看到尾，多数人会在开场寒暄和等待连麦的地方退出。回放整理真正解决问题的，不是把视频拼得更完整，而是把节点标到分钟，让人能直接跳到唱歌、连麦、游戏的分界处。以11月6日场为例，开播前22分钟是设备调试和看弹幕，23分之后才进入第一首歌，这个前22分钟对回看的人几乎没有信息量。</p>
+          <h3>时间码与实际位置偏差的来源</h3>
+          <p>回放条目的时间码按直播开播计时，<strong>01:12:40 就是开播后1小时12分40秒</strong>。三段式上传稿会有偏差：如果视频被切成21点、23点、凌晨1点三段，第二段进度条归零，想找的东西要叠加前段时长。11月3日连麦局就是三段上传，条目里写的是“02:05:10（第二段 00:35:10）”，两个数都列出来，避免拖动时对不上。</p>
+          <h3>唱歌场次的可核对差异</h3>
+          <p>《小半》在这37场里唱了5次，调性不完全一致。11月6日升半音，10月25日原调，10月11日降半调。升半音那次副歌换气位置整体前移，第二段主歌“固执的青春”有抢拍；原调那次更稳但结尾漏了一句。判断留哪一版，看你要的是情绪还是完整度，这个差异可以自己拖到时间码核对。</p>
+          <table class="check-table">
+            <caption class="tiny" style="text-align:left;padding:6px 0;color:var(--text-3)">《小半》三次演唱对照</caption>
+            <thead><tr><th>场次</th><th>调性</th><th>可核对问题</th></tr></thead>
+            <tbody>
+              <tr><td>11月6日</td><td>升半音</td><td>第二段主歌抢拍，结尾完整</td></tr>
+              <tr><td>10月25日</td><td>原调</td><td>整体稳，结尾少唱一句</td></tr>
+              <tr><td>10月11日</td><td>降半调</td><td>低音更实，高音转假声</td></tr>
+            </tbody>
+          </table>
+          <h3>连麦段的信息密度判断</h3>
+          <p>连麦回放的弹幕峰值和内容质量经常反向。11月3日四人局冷场27秒那段弹幕最密，但真正有信息的是之后一段清唱接场。9段连麦里，只有3段在结束后还有人回看，共同点是有人完整唱完一首，而不是抢话最凶的那段。<strong>这类判断可以被反驳：如果你看连麦就是要看现场反应，抢话段显然更值。</strong></p>
+          <div class="quote">“同一个场次，切片账号只留30秒高能，完整回放里那30秒前面还有两分钟铺垫。两者不冲突，但别拿切片当整场。”——回放条目备注里反复出现的整理原则</div>
+          <h3>游戏局的起点怎么算</h3>
+          <p>游戏局专场4场，录制从开播就开始，但单排热身阶段通常剪掉。11月5日场标注的01:20:00起是第一次组队，此前53分钟里只有一次单排。组队之后前两局连败，第三局换位才出现有效报点。看游戏回放，从第一次组队看起能看懂后续为什么翻盘，从决胜局直接看只能看到结果。</p>
+          <p>需要分开的三类信息：<strong>事实</strong>是时间码、曲目、时长、画质；<strong>回应</strong>是主播在直播里对更新频率、伴奏来源的解释；<strong>推测</strong>是“某场之后节奏变了”这类没有录制证据的判断。前两类可以核对，第三类只能当参考。</p>
+        </div>
+      </section>
+
+      <!-- 板块6 体验指南 -->
+      <section class="section" id="guide">
+        <div class="sec-head">
+          <h2>观看指南：找一段回放的五步</h2>
+          <span class="sec-note">适用于手机与桌面</span>
+        </div>
+        <ol class="steps">
+          <li><b>先定类型。</b>想听歌去唱歌场，想看互动去连麦局，想看配合去游戏局。三类场次的时间码格式一致，但起点不同：唱歌场从第一首算，连麦局从开麦算，游戏局从第一次组队算。</li>
+          <li><b>看时长和画质。</b>1080P原画多在3小时以上，720P以下多为观众录屏。切片通常在30秒到2分钟，适合看反应，不适合听完整曲目。</li>
+          <li><b>核对时间码。</b>单段上传直接拖进度条；分段上传要叠加前段时长，条目里两个数都写了，先看括号里的分段起点。</li>
+          <li><b>查伴奏版本。</b>消音版人声单薄，原唱轨会和声叠加。咬字和主播音色不符的，多半是原唱轨没关，条目备注里标了“原唱轨”或“纯伴奏”。</li>
+          <li><b>记下缺项。</b>前12分钟缺失、音频不同步、帧率偏低，都会写在备注。接受不了缺项就换一条同时长的同类场次。</li>
+        </ol>
+      </section>
+
+      <!-- 板块7 FAQ -->
+      <section class="section" id="faq">
+        <div class="sec-head">
+          <h2>常见问题：回放检索与版本对照</h2>
+          <span class="sec-note">6个问题</span>
+        </div>
+        <details>
+          <summary>直播回放和直播录像完整版有什么区别？</summary>
+          <div class="faq-body">完整版保留开场寒暄、等待连麦和分段休息，时长常在3小时以上；回放整理版按看点切段，通常保留唱歌、连麦、游戏局三类节点，删去设备调试和闲聊等待。11月6日场完整版3小时07分，整理版只标了14个唱歌节点和2个连麦节点。</div>
+        </details>
+        <details>
+          <summary>回放里的时间码怎么用？</summary>
+          <div class="faq-body">时间码按直播开播计时，00:42:10表示开播后42分10秒。单段上传的播放器进度条与直播时长对齐，直接拖动即可；分段上传稿需要叠加分段起点，条目括号里写了第二段的本地时间。</div>
+        </details>
+        <details>
+          <summary>为什么有的场次只有竖屏片段？</summary>
+          <div class="faq-body">竖屏片段来自直播间切片账号的二次剪辑，原始横屏录制未公开时不提供全片。切片常保留30秒到2分钟，适合看反应，不适合听完整歌曲。37场里9条属于这类，画质多在720P以下。</div>
+        </details>
+        <details>
+          <summary>唱歌场的伴奏音轨和原唱怎么区分？</summary>
+          <div class="faq-body">直播间使用的伴奏多为消音版，人声轨单薄；若听到和声叠加且咬字与主播音色不符，通常是原唱轨未关。回放条目会在备注里标注“原唱轨”或“纯伴奏”，10月25日场《慢冷》就是原唱轨残留的一例。</div>
+        </details>
+        <details>
+          <summary>连麦局的嘉宾名单在哪里核对？</summary>
+          <div class="faq-body">回放条目的嘉宾栏按直播间挂麦顺序记录，含昵称和入场分钟。昵称以连麦时显示为准，改过名的账号会在括号里写旧昵称。11月2日场第三人改名后，条目补了旧名，方便按时间线对上。</div>
+        </details>
+        <details>
+          <summary>游戏局回放适合从哪一段看起？</summary>
+          <div class="faq-body">从第一次组队开始的分钟数看起，避开单排热身。组队段落通常有明确的口令和分工，能看懂后续为什么翻盘或失误。11月5日场从01:20:00开始，此前的单排段没有报点配合。</div>
+        </details>
+      </section>
+
+      <!-- 板块8 用户评论 -->
+      <section class="section" id="comments">
+        <div class="sec-head">
+          <h2>听友评论：对具体条目的反应</h2>
+          <span class="sec-note">来自条目讨论区，已整理</span>
+        </div>
+        <div class="comments">
+          <div class="cmt">
+            <div class="cmt-head"><span class="avatar" aria-hidden="true"></span><span class="cmt-name">路过的猫薄荷</span><span>· 11月6日 23:41</span></div>
+            <p><span class="quote-line">《小半》升半音那版</span>第二段主歌抢拍其实很明显，但情绪是五个版本里最满的，我反复听了三遍。</p>
+          </div>
+          <div class="cmt">
+            <div class="cmt-head"><span class="avatar" aria-hidden="true"></span><span class="cmt-name">凌晨两点不睡</span><span>· 11月5日 02:15</span></div>
+            <p>游戏局那两段补传的帧率看得眼睛累，报点倒是清楚。前12分钟缺失挺可惜，决胜局的铺垫没了。</p>
+          </div>
+          <div class="cmt">
+            <div class="cmt-head"><span class="avatar" aria-hidden="true"></span><span class="cmt-name">周二听歌</span><span>· 11月3日 01:58</span></div>
+            <p><span class="quote-line">四人连麦抢麦那段</span>弹幕都在刷好笑，我倒觉得冷场那27秒有点尴尬，后面清唱接场才救回来。</p>
+          </div>
+          <div class="cmt">
+            <div class="cmt-head"><span class="avatar" aria-hidden="true"></span><span class="cmt-name">消音版受害者</span><span>· 10月30日 22:03</span></div>
+            <p>《慢冷》标注改过之后对上了，之前写的原调确实不对，低音位置一听就是降半调。</p>
+          </div>
+          <div class="cmt">
+            <div class="cmt-head"><span class="avatar" aria-hidden="true"></span><span class="cmt-name">时间码猎人</span><span>· 10月28日 03:20</span></div>
+            <p>分段上传的两个时间都列出来这个做法省事。叠加上一段时长算错过两次，现在直接看括号里的。</p>
+          </div>
+          <div class="cmt">
+            <div class="cmt-head"><span class="avatar" aria-hidden="true"></span><span class="cmt-name">只爱串烧</span><span>· 10月16日 00:47</span></div>
+            <p><span class="quote-line">10月15日老歌串烧第11到第14首</span>连唱不换气，音准确实飘，但那股硬撑的劲儿比修过音的好听。个人口味。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块9 相关资讯 -->
+      <section class="section" id="news">
+        <div class="sec-head">
+          <h2>相关资讯：直播与回放的近期动态</h2>
+          <span class="sec-note">10月10日—11月8日</span>
+        </div>
+        <ul class="news-list">
+          <li><time datetime="2026-11-07">11-07</time><b>游戏局录制设备更换。</b>11月5日起改用独立声卡收音，语音底噪下降，但画面帧率未同步提升，补传稿仍是720P。</li>
+          <li><time datetime="2026-11-04">11-04</time><b>连麦门槛调整。</b>主播在11月2日直播中说明，挂麦改为按弹幕排队顺序，不再固定老嘉宾优先，四人局增加。</li>
+          <li><time datetime="2026-10-29">10-29</time><b>伴奏来源说明。</b>11月前的消音伴奏多来自公开伴奏平台，部分曲目版本不一致，回放备注开始逐条标注版本。</li>
+          <li><time datetime="2026-10-20">10-20</time><b>切片账号合并。</b>两个高频切片账号内容重叠，回放归档时删除重复条目3条，保留时长更长的一条。</li>
+          <li><time datetime="2026-10-12">10-12</time><b>单场时长回落。</b>10月上旬多场超过4小时，10月12日起控制在3小时左右，等待连麦的空档被压缩。</li>
+        </ul>
+      </section>
+
+      <!-- 板块10 相关推荐 -->
+      <section class="section" id="related">
+        <div class="sec-head">
+          <h2>相关推荐：连带想看的内容</h2>
+          <span class="sec-note">按主题关联</span>
+        </div>
+        <div class="rec-wrap">
+          <div class="quote-card">
+            <p>凌晨场的选曲比晚间场慢，慢歌比例高，适合当背景音。想找完整唱的段落，优先看凌晨1点后的场次。</p>
+            <div class="who">—— 整理备注·选曲时段观察</div>
+          </div>
+          <div>
+            <div class="tag-index">
+              <a href="/#picks">《小半》五版对照</a>
+              <a href="/#picks">四人连麦抢麦段</a>
+              <a href="/#rank">组队翻盘局片段</a>
+              <a href="/#faq">伴奏原唱轨识别</a>
+              <a href="/#latest">11月5日游戏局补档</a>
+              <a href="/#deep">分段时间码叠加法</a>
+              <a href="/#comments">清唱接场片段</a>
+              <a href="/#latest">老歌串烧逐首拆分</a>
+            </div>
+            <p class="muted" style="margin-top:12px">关联标签按曲目、场次类型和检索方法三类分组，点开都落在本页对应板块，不跳站外。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块11 榜单 + 时间线 -->
+      <section class="section" id="rank">
+        <div class="sec-head">
+          <h2>场次榜单：按回看次数排序</h2>
+          <span class="sec-note">统计窗口10月10日—11月8日</span>
+        </div>
+        <ol class="rank-list">
+          <li><span class="r-name">11月6日唱歌场<small>《小半》升半音、《走马》完整</small></span><span class="r-val">回看 4,120</span></li>
+          <li><span class="r-name">11月3日四人连麦局<small>抢麦段 + 清唱接场</small></span><span class="r-val">回看 3,507</span></li>
+          <li><span class="r-name">10月28日游戏翻盘局<small>第三局换位后报点</small></span><span class="r-val">回看 2,846</span></li>
+          <li><span class="r-name">10月22日弹幕问答合集<small>更新频率与伴奏来源</small></span><span class="r-val">回看 2,310</span></li>
+          <li><span class="r-name">10月15日老歌串烧<small>20首副歌连唱</small></span><span class="r-val">回看 1,974</span></li>
+          <li><span class="r-name">10月25日唱歌场<small>《慢冷》原唱轨、《小半》原调</small></span><span class="r-val">回看 1,652</span></li>
+        </ol>
+        <h3 style="font-size:var(--fs-b);margin:var(--sp-4) 0 var(--sp-2);color:var(--accent)">归档节点</h3>
+        <ul class="timeline">
+          <li><b>画质标注统一</b><time datetime="2026-11-02">11月2日</time>原画、1080P、720P、录屏四档口径固定，旧条目回补。</li>
+          <li><b>游戏局补传完成</b><time datetime="2026-11-07">11月7日</time>11月5日场两段补齐，前12分钟仍缺失。</li>
+          <li><b>串烧时间码拆分</b><time datetime="2026-10-18">10月18日</time>20首逐首跳转，单首平均2分04秒。</li>
+          <li><b>去重与合并</b><time datetime="2026-10-26">10月26日</time>删除3条重复切片，保留长版。</li>
+        </ul>
+      </section>
+
+      <!-- 补充板块：可信度分层 -->
+      <section class="section" id="trust">
+        <div class="sec-head">
+          <h2>信息可信度分层：哪些能直接采信</h2>
+          <span class="sec-note">按证据类型分三层</span>
+        </div>
+        <div class="overview-grid">
+          <div class="ov">
+            <h3>可直接核对</h3>
+            <p>时间码、时长、曲目名、画质、嘉宾昵称。都能在播放器里拖到对应位置确认，错了就是标注错。</p>
+          </div>
+          <div class="ov">
+            <h3>需看原文措辞</h3>
+            <p>主播在直播里对更新频率、伴奏来源的解释。转述会丢限定词，比如“尽量每周”被转成“每周”。</p>
+          </div>
+          <div class="ov">
+            <h3>仅作参考</h3>
+            <p>“某场之后节奏变了”这类无录制证据的推测，以及切片账号的标题概括。标题常放大冲突，内容未必。</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 侧栏 -->
+    <aside class="side-col" aria-label="侧栏导航与速查">
+      <div class="side-block">
+        <h3>本页栏目</h3>
+        <nav class="side-nav" id="sideNav" aria-label="侧栏栏目导航">
+          <a href="/#overview">回放总览</a>
+          <a href="/#picks">名场面精选</a>
+          <a href="/#latest">更新记录</a>
+          <a href="/#cats">分类入口</a>
+          <a href="/#deep">深度解析</a>
+          <a href="/#guide">观看指南</a>
+          <a href="/#faq">常见问题</a>
+          <a href="/#comments">听友评论</a>
+          <a href="/#news">相关资讯</a>
+          <a href="/#related">相关推荐</a>
+          <a href="/#rank">场次榜单</a>
+          <a href="/#trust">可信度分层</a>
+        </nav>
+      </div>
+      <div class="side-block">
+        <h3>速查数字</h3>
+        <div class="side-stat">
+          <div><b>37</b>归档场次</div>
+          <div><b>96</b>曲目记录</div>
+          <div><b>214</b>时间码</div>
+          <div><b>9</b>切片条目</div>
+          <div><b>21</b>完整场次</div>
+          <div><b>7</b>录屏补档</div>
+        </div>
+      </div>
+      <div class="side-block">
+        <h3>高频检索词</h3>
+        <div class="side-tags">
+          <a href="/#picks">《小半》升半音</a>
+          <a href="/#picks">四人连麦</a>
+          <a href="/#guide">原唱轨</a>
+          <a href="/#guide">降半调伴奏</a>
+          <a href="/#latest">游戏局补传</a>
+          <a href="/#rank">翻盘局</a>
+          <a href="/#latest">老歌串烧</a>
+          <a href="/#faq">分段时间码</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="brand">
+        <svg viewBox="0 0 64 64" width="30" height="30" role="img" aria-label="猫耳播放键图形标志">
+          <rect width="64" height="64" rx="14" fill="#241a2e"/>
+          <path d="M14 44c6-10 10-18 18-18s12 8 18 18" fill="none" stroke="#f7b1c4" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="26" cy="30" r="3" fill="#ffe08a"/>
+          <circle cx="40" cy="30" r="3" fill="#ffe08a"/>
+          <path d="M28 42h8" stroke="#f7b1c4" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">kiki小野猫直播回放</span>
+      </div>
+      <p>把三小时直播拆成能直接跳的分钟节点，按唱歌、连麦、游戏三类归档。</p>
+      <p class="tiny" style="color:var(--text-3)">页面数据为按场次整理的示例条目，时间码与曲目以实际回放进度为准。<br>更新时间：2026年11月8日。</p>
+    </div>
+    <div class="foot-col">
+      <h4>回放分类</h4>
+      <a href="/#latest">唱歌场回放</a>
+      <a href="/#latest">连麦局回放</a>
+      <a href="/#latest">游戏局回放</a>
+      <a href="/#picks">名场面切片</a>
+      <a href="/#cats">分类入口</a>
+    </div>
+    <div class="foot-col">
+      <h4>检索帮助</h4>
+      <a href="/#guide">观看指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#trust">可信度分层</a>
+      <a href="/#rank">场次榜单</a>
+    </div>
+    <div class="foot-col">
+      <h4>互动与更新</h4>
+      <a href="/#comments">听友评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#related">相关推荐</a>
+      <a href="/#latest">更新记录</a>
+      <a href="/#top">回到顶部</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 kiki小野猫直播回放整理页 · 内容为示例整理，不提供播放源</span>
+    <span>页内条目均为静态说明，日期以2026年11月8日为参考。</span>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="回到顶部" title="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var nav=document.getElementById('mainNav');
+  if(menuBtn){
+    menuBtn.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'&&window.innerWidth<=900){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var backTop=document.getElementById('backTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>420){backTop.classList.add('show');}
+    else{backTop.classList.remove('show');}
+  },{passive:true});
+  backTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  var searchBtn=document.getElementById('searchBtn');
+  var input=document.getElementById('searchInput');
+  var resultBox=document.getElementById('searchResult');
+
+  var index=[];
+  document.querySelectorAll('main [id]').forEach(function(sec){
+    var h=sec.querySelector('h1,h2,h3');
+    if(h){index.push({id:sec.id,title:h.textContent.trim().slice(0,40),text:sec.textContent.replace(/\s+/g,' ')});}
+  });
+
+  function runSearch(){
+    var q=input.value.trim();
+    resultBox.innerHTML='';
+    if(!q){resultBox.classList.remove('show');return;}
+    var hits=index.filter(function(item){return item.text.indexOf(q)>-1;}).slice(0,6);
+    resultBox.classList.add('show');
+    if(!hits.length){
+      var d=document.createElement('div');
+      d.className='r-empty';
+      d.textContent='没有找到“'+q+'”相关的场次或段落，试试《小半》、连麦、游戏局或时间码。';
+      resultBox.appendChild(d);
+      return;
+    }
+    hits.forEach(function(item){
+      var a=document.createElement('a');
+      a.className='r-item';
+      a.href='/#/'+item.id;
+      a.setAttribute('href','#'+item.id);
+      a.textContent=item.title;
+      resultBox.appendChild(a);
+    });
+  }
+  searchBtn.addEventListener('click',runSearch);
+  input.addEventListener('keydown',function(e){if(e.key==='Enter'){runSearch();}});
+  input.addEventListener('input',function(){if(input.value.trim()===''){resultBox.classList.remove('show');}});
+  document.addEventListener('click',function(e){
+    if(!resultBox.contains(e.target)&&e.target!==input&&e.target!==searchBtn){
+      resultBox.classList.remove('show');
+    }
+  });
+
+  var links=document.querySelectorAll('#sideNav a');
+  var targets=[];
+  links.forEach(function(a){
+    var id=a.getAttribute('href').split('#')[1];
+    var el=document.getElementById(id);
+    if(el){targets.push({el:el,a:a});}
+  });
+  function highlight(){
+    var pos=window.scrollY+160;
+    var current=targets[0];
+    targets.forEach(function(t){if(t.el.offsetTop<=pos){current=t;}});
+    links.forEach(function(a){a.classList.remove('active');});
+    if(current){current.a.classList.add('active');}
+  }
+  window.addEventListener('scroll',highlight,{passive:true});
+  highlight();
+})();
+</script>
+</body>
+</html>
